@@ -1,0 +1,9 @@
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\DataContract\bin\Debug\netcoreapp2.0\DataContract.deps.json
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\DataContract\bin\Debug\netcoreapp2.0\DataContract.dll
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\DataContract\obj\Debug\netcoreapp2.0\DataContract.csproj.CoreCompileInputs.cache
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\DataContract\obj\Debug\netcoreapp2.0\DataContract.AssemblyInfoInputs.cache
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\DataContract\obj\Debug\netcoreapp2.0\DataContract.AssemblyInfo.cs
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\DataContract\bin\Debug\netcoreapp2.0\DataContract.pdb
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\DataContract\obj\Debug\netcoreapp2.0\DataContract.csprojAssemblyReference.cache
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\DataContract\obj\Debug\netcoreapp2.0\DataContract.dll
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\DataContract\obj\Debug\netcoreapp2.0\DataContract.pdb

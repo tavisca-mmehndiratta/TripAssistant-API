@@ -1,0 +1,224 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.0",
+    "signature": "40acaf32561b3ce37a2a3f906b873d95f4dc19e5"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.0": {
+      "TripResultsService/1.0.0": {
+        "dependencies": {
+          "ActivityTranslator": "1.0.0",
+          "ContextAnalyzerService": "1.0.0",
+          "CoreContract": "1.0.0",
+          "DataContract": "1.0.0",
+          "HotelTranslator": "1.0.0",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "TripResultsService.dll": {}
+        }
+      },
+      "ApiAiSDK/1.6.5": {
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/net35/ApiAiSDK.dll": {}
+        }
+      },
+      "Newtonsoft.Json/11.0.2": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "ActivityApi/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "ActivityApi.dll": {}
+        }
+      },
+      "ActivityTranslator/1.0.0": {
+        "dependencies": {
+          "ActivityApi": "1.0.0",
+          "DataContract": "1.0.0",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "ActivityTranslator.dll": {}
+        }
+      },
+      "ContextAnalyzerService/1.0.0": {
+        "dependencies": {
+          "ActivityApi": "1.0.0",
+          "ContextCheckerService": "1.0.0",
+          "CoreContract": "1.0.0",
+          "CoreResponseGenerator": "1.0.0",
+          "GeoCode": "1.0.0",
+          "HotelApi": "1.0.0",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "ContextAnalyzerService.dll": {}
+        }
+      },
+      "ContextCheckerService/1.0.0": {
+        "dependencies": {
+          "ContextGeneratorApi": "1.0.0"
+        },
+        "runtime": {
+          "ContextCheckerService.dll": {}
+        }
+      },
+      "ContextGeneratorApi/1.0.0": {
+        "dependencies": {
+          "ApiAiSDK": "1.6.5",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "ContextGeneratorApi.dll": {}
+        }
+      },
+      "CoreContract/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "CoreContract.dll": {}
+        }
+      },
+      "CoreResponseGenerator/1.0.0": {
+        "dependencies": {
+          "CoreContract": "1.0.0"
+        },
+        "runtime": {
+          "CoreResponseGenerator.dll": {}
+        }
+      },
+      "DataContract/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "DataContract.dll": {}
+        }
+      },
+      "GeoCode/1.0.0": {
+        "dependencies": {
+          "GeoCodeGeneratorApi": "1.0.0"
+        },
+        "runtime": {
+          "GeoCode.dll": {}
+        }
+      },
+      "GeoCodeGeneratorApi/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "GeoCodeGeneratorApi.dll": {}
+        }
+      },
+      "HotelApi/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "HotelApi.dll": {}
+        }
+      },
+      "HotelTranslator/1.0.0": {
+        "dependencies": {
+          "DataContract": "1.0.0",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "HotelTranslator.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TripResultsService/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ApiAiSDK/1.6.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yo81xpa0clRQOcBuZYpC+9Mlo/3wzPu9htK6Opmzo0CIu9lkrMzaK8xFB+DpzqPwt4Bt0UdT/n0WkedFit74Tw==",
+      "path": "apiaisdk/1.6.5",
+      "hashPath": "apiaisdk.1.6.5.nupkg.sha512"
+    },
+    "Newtonsoft.Json/11.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+      "path": "newtonsoft.json/11.0.2",
+      "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
+    },
+    "ActivityApi/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ActivityTranslator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ContextAnalyzerService/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ContextCheckerService/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ContextGeneratorApi/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CoreContract/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CoreResponseGenerator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DataContract/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GeoCode/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GeoCodeGeneratorApi/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HotelApi/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HotelTranslator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
