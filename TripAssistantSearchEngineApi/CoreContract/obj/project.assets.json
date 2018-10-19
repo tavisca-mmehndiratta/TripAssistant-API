@@ -711,11 +711,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\CoreContract\\CoreContract.csproj",
+      "projectUniqueName": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\CoreContract\\CoreContract.csproj",
       "projectName": "CoreContract",
-      "projectPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\CoreContract\\CoreContract.csproj",
+      "projectPath": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\CoreContract\\CoreContract.csproj",
       "packagesPath": "C:\\Users\\mmehndiratta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\CoreContract\\obj\\",
+      "outputPath": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\CoreContract\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

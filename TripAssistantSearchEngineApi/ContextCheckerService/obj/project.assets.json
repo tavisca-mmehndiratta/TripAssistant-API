@@ -773,11 +773,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\ContextCheckerService\\ContextCheckerService.csproj",
+      "projectUniqueName": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\ContextCheckerService\\ContextCheckerService.csproj",
       "projectName": "ContextCheckerService",
-      "projectPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\ContextCheckerService\\ContextCheckerService.csproj",
+      "projectPath": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\ContextCheckerService\\ContextCheckerService.csproj",
       "packagesPath": "C:\\Users\\mmehndiratta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\ContextCheckerService\\obj\\",
+      "outputPath": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\ContextCheckerService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -796,8 +796,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\ContextGeneratorApi\\ContextGeneratorApi.csproj": {
-              "projectPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\ContextGeneratorApi\\ContextGeneratorApi.csproj"
+            "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\ContextGeneratorApi\\ContextGeneratorApi.csproj": {
+              "projectPath": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\ContextGeneratorApi\\ContextGeneratorApi.csproj"
             }
           }
         }

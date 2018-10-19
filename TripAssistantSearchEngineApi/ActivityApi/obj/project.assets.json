@@ -4336,11 +4336,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\ActivityApi\\ActivityApiProvider.csproj",
+      "projectUniqueName": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\ActivityApi\\ActivityApiProvider.csproj",
       "projectName": "ActivityApiProvider",
-      "projectPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\ActivityApi\\ActivityApiProvider.csproj",
+      "projectPath": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\ActivityApi\\ActivityApiProvider.csproj",
       "packagesPath": "C:\\Users\\mmehndiratta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\ActivityApi\\obj\\",
+      "outputPath": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\ActivityApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -4359,11 +4359,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\RedisDataProvider\\RedisDataProvider.csproj": {
-              "projectPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\RedisDataProvider\\RedisDataProvider.csproj"
+            "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\RedisDataProvider\\RedisDataProvider.csproj": {
+              "projectPath": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\RedisDataProvider\\RedisDataProvider.csproj"
             },
-            "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\CoreContract\\CoreContract.csproj": {
-              "projectPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\CoreContract\\CoreContract.csproj"
+            "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\CoreContract\\CoreContract.csproj": {
+              "projectPath": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\CoreContract\\CoreContract.csproj"
             }
           }
         }

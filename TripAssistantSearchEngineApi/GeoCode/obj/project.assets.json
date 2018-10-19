@@ -748,11 +748,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\GeoCode\\GeoCode.csproj",
+      "projectUniqueName": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\GeoCode\\GeoCode.csproj",
       "projectName": "GeoCode",
-      "projectPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\GeoCode\\GeoCode.csproj",
+      "projectPath": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\GeoCode\\GeoCode.csproj",
       "packagesPath": "C:\\Users\\mmehndiratta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\GeoCode\\obj\\",
+      "outputPath": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\GeoCode\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -771,8 +771,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\GeoCodeGeneratorApi\\GeoCodeGeneratorApi.csproj": {
-              "projectPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\GeoCodeGeneratorApi\\GeoCodeGeneratorApi.csproj"
+            "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\GeoCodeGeneratorApi\\GeoCodeGeneratorApi.csproj": {
+              "projectPath": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\GeoCodeGeneratorApi\\GeoCodeGeneratorApi.csproj"
             }
           }
         }

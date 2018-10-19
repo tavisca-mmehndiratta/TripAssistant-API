@@ -11,42 +11,42 @@ namespace TripAssistantSearchEngineApi
     public class HotelCache: IHotelCache
     {
         public ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("localhost");
-
-
         public JObject GetHotelsFromCache (string city)
         {
-
-            IDatabase db = redis.GetDatabase();
-           
-            string val = db.StringGet(city);
-            if (val == null)
+            JObject data = new JObject();
+            try
             {
-                return null;
+                IDatabase db = redis.GetDatabase();
+                string val = db.StringGet(city);
+                if (val == null)
+                {
+                    return null;
+                }
+                data = JsonConvert.DeserializeObject<JObject>(val);
             }
-
-            JObject ob = JsonConvert.DeserializeObject<JObject>(val);
-
-
-
-            //Console.WriteLine (val);
-
-            return ob;
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                data = null;
+            }
+            return data;
         }
-
         public void InsertHotelsInCache(JObject hotel, string city)
         {
-
-            IDatabase db = redis.GetDatabase();
-            string data = JsonConvert.SerializeObject(hotel);
-
-            if (db.StringSet(city, data))
+            try
             {
-                var val = db.StringGet(city);
-
-                Console.WriteLine(val);
+                IDatabase db = redis.GetDatabase();
+                string data = JsonConvert.SerializeObject(hotel);
+                if (db.StringSet(city, data))
+                {
+                    var val = db.StringGet(city);
+                    Console.WriteLine(val);
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
     }
-
-    
 }

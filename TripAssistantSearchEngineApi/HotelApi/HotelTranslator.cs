@@ -12,10 +12,18 @@ namespace TripAssistantSearchEngineApi
             Hotel hotel;
             string url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=";
             List<Hotel> hotelList = new List<Hotel>();
-
             foreach (JObject res in results)
             {
-                hotel = new Hotel();
+                hotel = GetSingleTranslatedHotel(res, url);
+                hotelList.Add(hotel);
+            }
+            return hotelList;
+        }
+        public Hotel GetSingleTranslatedHotel(JObject res, string url)
+        {
+            Hotel hotel = new Hotel();
+            try
+            {
                 JArray photoArray;
                 hotel.Name = res["name"].Value<String>();
                 hotel.Rating = res["rating"].Value<Double>();
@@ -24,24 +32,19 @@ namespace TripAssistantSearchEngineApi
                 JObject location = geometry["location"].Value<JObject>();
                 hotel.Lattitude = location["lat"].Value<Double>();
                 hotel.Longitude = location["lng"].Value<Double>();
-
                 if (res["photos"] != null)
                 {
-                     photoArray = res["photos"].Value<JArray>();
-
-                  JObject  photo = photoArray[0].Value<JObject>();
-
-                    hotel.PhotoUrl = url + photo["photo_reference"].Value<String>() + "&key=AIzaSyD2bL_pYSzue4JkSDQg4fYSuVT8XA_bjCQ";
+                    photoArray = res["photos"].Value<JArray>();
+                    JObject photo = photoArray[0].Value<JObject>();
+                    hotel.PhotoUrl = url + photo["photo_reference"].Value<String>() + "&key=AIzaSyAGsJD6XqB9zheEOUoYFpOCGuPuDlUWhOc";
                 }
-
-
-              
-                hotelList.Add(hotel);
             }
-
-
-            return hotelList;
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                hotel = null;
+            }
+            return hotel;
         }
-    }
-    
+    }    
 }

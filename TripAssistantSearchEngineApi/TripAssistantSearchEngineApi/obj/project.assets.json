@@ -13403,11 +13403,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\TripAssistantSearchEngineApi\\TripAssistantSearchEngineApi.csproj",
+      "projectUniqueName": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\TripAssistantSearchEngineApi\\TripAssistantSearchEngineApi.csproj",
       "projectName": "TripAssistantSearchEngineApi",
-      "projectPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\TripAssistantSearchEngineApi\\TripAssistantSearchEngineApi.csproj",
+      "projectPath": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\TripAssistantSearchEngineApi\\TripAssistantSearchEngineApi.csproj",
       "packagesPath": "C:\\Users\\mmehndiratta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\TripAssistantSearchEngineApi\\obj\\",
+      "outputPath": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\TripAssistantSearchEngineApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13426,11 +13426,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\DataContract\\DataContract.csproj": {
-              "projectPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\DataContract\\DataContract.csproj"
+            "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\DataContract\\DataContract.csproj": {
+              "projectPath": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\DataContract\\DataContract.csproj"
             },
-            "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\TripResultsService\\TripResultsService.csproj": {
-              "projectPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\TripResultsService\\TripResultsService.csproj"
+            "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\TripResultsService\\TripResultsService.csproj": {
+              "projectPath": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\TripResultsService\\TripResultsService.csproj"
             }
           }
         }

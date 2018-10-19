@@ -9,7 +9,7 @@ namespace Core.Contracts
     {
         List<JObject> GetActivitiesFromCache(string city);
         void InsertActivitiesInCache(List<JObject> activity, string city);
-       void Remove(string key);
+        void Remove(string key);
 
     }
 }

@@ -4497,11 +4497,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\ContextAnalyzerService\\ContextAnalyzerService.csproj",
+      "projectUniqueName": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\ContextAnalyzerService\\ContextAnalyzerService.csproj",
       "projectName": "ContextAnalyzerService",
-      "projectPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\ContextAnalyzerService\\ContextAnalyzerService.csproj",
+      "projectPath": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\ContextAnalyzerService\\ContextAnalyzerService.csproj",
       "packagesPath": "C:\\Users\\mmehndiratta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\ContextAnalyzerService\\obj\\",
+      "outputPath": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\ContextAnalyzerService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -4520,23 +4520,23 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\ActivityApi\\ActivityApiProvider.csproj": {
-              "projectPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\ActivityApi\\ActivityApiProvider.csproj"
+            "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\ActivityApi\\ActivityApiProvider.csproj": {
+              "projectPath": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\ActivityApi\\ActivityApiProvider.csproj"
             },
-            "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\GeoCode\\GeoCode.csproj": {
-              "projectPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\GeoCode\\GeoCode.csproj"
+            "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\GeoCode\\GeoCode.csproj": {
+              "projectPath": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\GeoCode\\GeoCode.csproj"
             },
-            "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\CoreResponseGenerator\\CoreResponseGenerator.csproj": {
-              "projectPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\CoreResponseGenerator\\CoreResponseGenerator.csproj"
+            "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\CoreResponseGenerator\\CoreResponseGenerator.csproj": {
+              "projectPath": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\CoreResponseGenerator\\CoreResponseGenerator.csproj"
             },
-            "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\ContextCheckerService\\ContextCheckerService.csproj": {
-              "projectPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\ContextCheckerService\\ContextCheckerService.csproj"
+            "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\ContextCheckerService\\ContextCheckerService.csproj": {
+              "projectPath": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\ContextCheckerService\\ContextCheckerService.csproj"
             },
-            "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\CoreContract\\CoreContract.csproj": {
-              "projectPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\CoreContract\\CoreContract.csproj"
+            "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\CoreContract\\CoreContract.csproj": {
+              "projectPath": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\CoreContract\\CoreContract.csproj"
             },
-            "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\HotelApi\\HotelApiProvider.csproj": {
-              "projectPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\HotelApi\\HotelApiProvider.csproj"
+            "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\HotelApi\\HotelApiProvider.csproj": {
+              "projectPath": "C:\\Users\\mmehndiratta\\Downloads\\trash-master\\trash-master\\TripAssistantSearchEngineApi\\HotelApi\\HotelApiProvider.csproj"
             }
           }
         }

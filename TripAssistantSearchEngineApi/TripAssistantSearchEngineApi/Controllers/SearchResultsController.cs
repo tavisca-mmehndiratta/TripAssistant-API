@@ -14,7 +14,7 @@ namespace TripAssistantSearchEngineApi
     [Route("api/SearchResults")]
     public class SearchResultsController : Controller
     {
-        private CoreContract.ITripResultsService _tripResults;
+        private readonly CoreContract.ITripResultsService _tripResults;
         private readonly IMapper _mapper;
         public SearchResultsController(CoreContract.ITripResultsService iTripResult, IMapper mapper)
         {
@@ -22,11 +22,19 @@ namespace TripAssistantSearchEngineApi
             _mapper = mapper;
         }
         [HttpGet]
-        public DataContract.Response GetSearchResults([FromQuery] string input, [FromQuery] string location)
+        public IActionResult GetSearchResults([FromQuery] string input, [FromQuery] string location)
         {
-            CoreContract.Response response = new CoreContract.Response();
-            response = _tripResults.FetchResultsFromAPI(input, location);
-            return _mapper.Map<DataContract.Response>(response);
+            try
+            {
+                CoreContract.Response response = new CoreContract.Response();
+                response = _tripResults.FetchResultsFromAPI(input, location);
+                return Ok(_mapper.Map<DataContract.Response>(response));
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return BadRequest("Exception Occured!!!");
+            }
         }
 
     }

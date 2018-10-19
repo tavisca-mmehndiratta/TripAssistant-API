@@ -2,15 +2,23 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace TripAssistantSearchEngineApi
 {
     public class CoreResponseGenerator : ICoreResponseGenerator
     {
         Response coreResponse = new Response();
-        public Response MakeResponse(string input,List<Hotel> hotels, List<Activity> activities, string type, string res)
+        public Response MakeResponse(string input,Task<List<Hotel>> hotels, List<Activity> activities, string type, string res)
         {
-            coreResponse.HotelList = hotels;
+            if (hotels != null)
+            {
+                coreResponse.HotelList = hotels.Result;
+            }
+            else
+            {
+                coreResponse.HotelList = null;
+            }
             coreResponse.ActivityList = activities;
             coreResponse.Type = type;
             coreResponse.ResponseQuery = res;

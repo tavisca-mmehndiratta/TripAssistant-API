@@ -4,34 +4,42 @@ using System;
 using Core.Contracts;
 using System.Collections.Generic;
 using System.Net;
+using System.Threading.Tasks;
 
 namespace TripAssistantSearchEngineApi
 {
     public class GeoCodeGenerator : IGeoCodeGenerator
     {
-        public List<double> GetGeoLocation(string url)
+        public async Task<List<double>> GetGeoLocation(string url)
         {
             int count = 0;
             List<double> locations = new List<double>();
-            JObject value, location, geometry;
+            JObject location, geometry;
             double latitude = 0;
             double longitude = 0;
-
-            using (var client = new WebClient())
+            try
             {
-                var jsonPrediction = client.DownloadString(url);
-                var data = (JObject)JsonConvert.DeserializeObject(jsonPrediction);
-                var results = data["results"].Value<JArray>();
-
-                foreach (JObject res in results)
+                using (var client = new WebClient())
                 {
-
-                    count++;
-                    geometry = res["geometry"].Value<JObject>();
-                    location = geometry["location"].Value<JObject>();
-                    latitude += location["lat"].Value<Double>();
-                    longitude += location["lng"].Value<Double>();
+                    string jsonPrediction = await client.DownloadStringTaskAsync(url);
+                    var data = (JObject)JsonConvert.DeserializeObject(jsonPrediction);
+                    var results = data["results"].Value<JArray>();
+                    foreach (JObject res in results)
+                    {
+                        count++;
+                        geometry = res["geometry"].Value<JObject>();
+                        location = geometry["location"].Value<JObject>();
+                        latitude += location["lat"].Value<Double>();
+                        longitude += location["lng"].Value<Double>();
+                    }
                 }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                latitude = 0;
+                longitude = 0;
+                count = 0;
             }
             locations.Add(latitude);
             locations.Add(longitude);

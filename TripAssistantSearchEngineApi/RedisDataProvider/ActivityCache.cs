@@ -10,51 +10,56 @@ namespace TripAssistantSearchEngineApi
 {
     public class ActivityCache: IActivityCache
     { 
-            public ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("localhost");
-
-
-            public List<JObject> GetActivitiesFromCache(string city)
+        public ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("localhost");
+        public List<JObject> GetActivitiesFromCache(string city)
+        {
+            List<JObject> data = new List<JObject>();
+            try
             {
-
                 IDatabase db = redis.GetDatabase();
-               
                 string val = db.StringGet(city);
                 if (val == null)
                 {
                     return null;
                 }
-
-                List<JObject> ob = JsonConvert.DeserializeObject<List<JObject>>(val);
-
-
-
-                //Console.WriteLine (val);
-
-                return ob;
+                data = JsonConvert.DeserializeObject<List<JObject>>(val);
             }
-
-            public void InsertActivitiesInCache(List<JObject> activity, string city)
+            catch(Exception e)
             {
-
+                Console.WriteLine(e.Message);
+                data = null;
+            }
+            return data;
+        }
+        public void InsertActivitiesInCache(List<JObject> activity, string city)
+        {
+            try
+            {
                 IDatabase db = redis.GetDatabase();
                 string data = JsonConvert.SerializeObject(activity);
-
                 if (db.StringSet(city, data))
                 {
                     var val = db.StringGet(city);
-
                     Console.WriteLine(val);
                 }
             }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
         public void Remove(string key)
         {
-            IDatabase db = redis.GetDatabase();
-            db.KeyDelete(key);
-
-        }
-            
-    }
-
-    
+            try
+            {
+                IDatabase db = redis.GetDatabase();
+                db.KeyDelete(key);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }       
+    }    
 }
 

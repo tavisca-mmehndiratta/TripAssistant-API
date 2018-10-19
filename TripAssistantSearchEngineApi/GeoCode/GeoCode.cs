@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Core.Contracts;
 
 namespace TripAssistantSearchEngineApi
@@ -8,7 +9,12 @@ namespace TripAssistantSearchEngineApi
     {
         List<double> locations = new List<double>();
         string geoCode = "";
-        private IGeoCodeGenerator _geoCodeGenerator;
+        private readonly IGeoCodeGenerator _geoCodeGenerator;
+        private readonly string _startFieldOfCumulativeUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=";
+        private readonly string _endFieldOfCumulativeUrl = "&radius=300000&keyword=point%20of%20interest&key=AIzaSyAGsJD6XqB9zheEOUoYFpOCGuPuDlUWhOc";
+        private readonly string _startFieldOfSingleUrl = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=";
+        private readonly string _endFieldOfSingleUrl = "&key=AIzaSyAGsJD6XqB9zheEOUoYFpOCGuPuDlUWhOc";
+
         public GeoCode(IGeoCodeGenerator geoCodeGenerator)
         {
             _geoCodeGenerator = geoCodeGenerator;
@@ -17,20 +23,38 @@ namespace TripAssistantSearchEngineApi
         public string GetCumulativeGeoCode(string geocode)
         {
             geoCode = "";
-            string url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+geocode+"&radius=300000&keyword=point%20of%20interest&key=AIzaSyD2bL_pYSzue4JkSDQg4fYSuVT8XA_bjCQ";
-            locations = _geoCodeGenerator.GetGeoLocation(url);
-            geoCode += (locations[0] / locations[2]).ToString()+ ",";
-            geoCode += (locations[1] / locations[2]).ToString();
+            try
+            {
+                string url = _startFieldOfCumulativeUrl + geocode + _endFieldOfCumulativeUrl;
+                Task<List<double>> location = _geoCodeGenerator.GetGeoLocation(url);
+                locations = location.Result;
+                geoCode += (locations[0] / locations[2]).ToString() + ",";
+                geoCode += (locations[1] / locations[2]).ToString();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                geocode = "0,0";
+            }
             return geoCode;
         }
 
         public string GetGeoCodeOfCity(string city)
         {
             geoCode = "";
-            string url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + city + "&key=AIzaSyD2bL_pYSzue4JkSDQg4fYSuVT8XA_bjCQ";
-            locations = _geoCodeGenerator.GetGeoLocation(url);
-            geoCode += locations[0].ToString() + ",";
-            geoCode += locations[1].ToString();
+            try
+            {
+                string url = _startFieldOfSingleUrl + city + _endFieldOfSingleUrl;
+                Task<List<double>> location = _geoCodeGenerator.GetGeoLocation(url);
+                locations = location.Result;
+                geoCode += locations[0].ToString() + ",";
+                geoCode += locations[1].ToString();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                geoCode = "0,0";
+            }
             return geoCode;
         }
     }

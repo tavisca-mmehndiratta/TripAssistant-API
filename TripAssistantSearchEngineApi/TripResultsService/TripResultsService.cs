@@ -7,7 +7,7 @@ namespace TripAssistantSearchEngineApi
 {
     public class TripResultsService : ITripResultsService
     {
-        IContextAnalyzerService _getcontextResults;
+        private readonly IContextAnalyzerService _getcontextResults;
         public TripResultsService(IContextAnalyzerService contextAnalyzer)
         {
             _getcontextResults = contextAnalyzer;
@@ -31,10 +31,7 @@ namespace TripAssistantSearchEngineApi
                 finalResponseToController.Request = null;
                 finalResponseToController.ResponseQuery = null;
             }
-
             return finalResponseToController;
         }
-    }
-
-    
+    }   
 }

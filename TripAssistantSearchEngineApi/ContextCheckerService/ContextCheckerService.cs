@@ -4,7 +4,7 @@ namespace TripAssistantSearchEngineApi
 {
     public class ContextCheckerService : IContextCheckerService
     {
-        IContextGenerator _contextGenerator;
+        private readonly IContextGenerator _contextGenerator;
         string context;
         public ContextCheckerService(IContextGenerator contextGenerator)
         {
@@ -50,25 +50,7 @@ namespace TripAssistantSearchEngineApi
                 }
                 else
                 {
-                    if (response[response.Length - 1].Equals("send"))
-                    {
-                        for (int index = 2; index <= 7; index++)
-                        {
-                            result += " " + response[index];
-                        }
-                    }
-                    else if (response[response.Length - 1].Equals("trip"))
-                    {
-                        int index = Array.IndexOf(response, "activity");
-                        for (int iterator = index + 1; iterator < response.Length - 1; iterator++)
-                        {
-                            result += " " + response[iterator];
-                        }
-                    }
-                    else
-                    {
-                        result += " I can not process this request!!";
-                    }
+                    result = PerformOperationForIncorrectContext(response);
                 }
             }
             else
@@ -78,6 +60,29 @@ namespace TripAssistantSearchEngineApi
 
             return result;
         }
-    }
-    
+        public string PerformOperationForIncorrectContext(string[] response)
+        {
+            string result = "";
+            if (response[response.Length - 1].Equals("send"))
+            {
+                for (int index = 2; index <= 7; index++)
+                {
+                    result += " " + response[index];
+                }
+            }
+            else if (response[response.Length - 1].Equals("trip"))
+            {
+                int index = Array.IndexOf(response, "activity");
+                for (int iterator = index + 1; iterator < response.Length - 1; iterator++)
+                {
+                    result += " " + response[iterator];
+                }
+            }
+            else
+            {
+                result += " I can not process this request!!";
+            }
+            return result;
+        }
+    }    
 }

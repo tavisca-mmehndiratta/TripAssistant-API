@@ -10,19 +10,18 @@ namespace TripAssistantSearchEngineApi
 {
     public class ContextAnalyzerService : IContextAnalyzerService
     {
-        private IGeoCode _geoCode;
-        private IActivityApi _activityApi;
-        private ICoreResponseGenerator _coreResponseGenerator;
-        private IHotelApi _hotelApi;
-        private IContextCheckerService _contextChecker;
+        private readonly IGeoCode _geoCode;
+        private readonly IActivityApi _activityApi;
+        private readonly ICoreResponseGenerator _coreResponseGenerator;
+        private readonly IHotelApi _hotelApi;
+        private readonly IContextCheckerService _contextChecker;
         string typeResponse = "";
         List<Activity> activityResponse = null;
-        List<Hotel> hotelResponse = null;
+        Task<List<Hotel>> hotelResponse = null;
         string resultantResponse = "";
         string[] response;
         string splitResponse;
         string geoCode;
-
         public ContextAnalyzerService(ICoreResponseGenerator coreResponseGenerator, IActivityApi activityApi,IGeoCode geoCode,IContextCheckerService contextChecker, IHotelApi hotelApi)
         {
             _hotelApi = hotelApi;
@@ -35,47 +34,65 @@ namespace TripAssistantSearchEngineApi
         {
             splitResponse = _contextChecker.GetFilteredQueryResponse(input);
             response = splitResponse.Split(' ');
-
-            if (response[0].Equals("yes"))
+            try
             {
-                typeResponse = "res";
-                string queryString = "";
-                if (response[response.Length - 1].Equals("current"))
+                if (response[0].Equals("yes"))
                 {
-                    queryString = location + " " + response[1];
+                    typeResponse = "res";
+                    string queryString = PerformOperationAgainstCorrectInput(location);
+                    string[] keywords = queryString.Split(' ');
+                    geoCode = _geoCode.GetGeoCodeOfCity(keywords[0]);
+                    activityResponse = _activityApi.GetActivities(geoCode, keywords[0]);
+                    if (keywords[1] != "1")
+                    {
+                        queryString = _geoCode.GetCumulativeGeoCode(geoCode);
+                        hotelResponse = _hotelApi.GetHotelDetails(queryString, keywords[0]);
+                    }
+                }
+                else if (response[0].Equals("no"))
+                {
+                    typeResponse = "req";
+                    resultantResponse = PerformOperationAgainstIncorrectInput();
                 }
                 else
                 {
-                    queryString = response[1] + " " + response[2];
-                }
-
-                string[] keywords = queryString.Split(' ');
-                geoCode = _geoCode.GetGeoCodeOfCity(keywords[0]);
-
-                activityResponse = _activityApi.GetActivities(geoCode,keywords[0]);
-                if (keywords[1] != "1")
-                {
-                    queryString = _geoCode.GetCumulativeGeoCode(geoCode);
-                    hotelResponse = _hotelApi.GetHotelDetails(queryString, keywords[0]);
+                    typeResponse = "req";
+                    resultantResponse = "This Request was beyond my power!!!";
                 }
             }
-            else if (response[0].Equals("no"))
+            catch(Exception e)
             {
+                Console.WriteLine(e.Message);
                 typeResponse = "req";
-                resultantResponse = "";
-                for (int index = 1; index < response.Length; index++)
-                {
-                    resultantResponse += response[index] + " ";
-                }
+                hotelResponse = null;
+                activityResponse = null;
+                resultantResponse = "This Request is beyond my power!!!";
+            }
+            Response finalResults = new Response();
+            finalResults= _coreResponseGenerator.MakeResponse(input,hotelResponse, activityResponse, typeResponse, resultantResponse);
+            return finalResults;
+        }
+        public string PerformOperationAgainstCorrectInput(string location)
+        {
+            string queryString = "";
+            if (response[response.Length - 1].Equals("current"))
+            {
+                queryString = location + " " + response[1];
             }
             else
             {
-                typeResponse = "req";
-                resultantResponse = "This Request was beyond my power!!!";
+                queryString = response[1] + " " + response[2];
             }
-            Response finalResults = _coreResponseGenerator.MakeResponse(input,hotelResponse, activityResponse, typeResponse, resultantResponse);
-            return finalResults;
+            return queryString;
         }
-    }
-    
+        public string PerformOperationAgainstIncorrectInput()
+        {
+            resultantResponse = "";
+            for (int index = 1; index < response.Length; index++)
+            {
+                resultantResponse += response[index] + " ";
+            }
+            return resultantResponse;
+        }
+    }    
 }
