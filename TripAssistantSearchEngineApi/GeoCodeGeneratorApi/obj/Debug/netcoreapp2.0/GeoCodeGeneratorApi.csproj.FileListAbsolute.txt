@@ -1,9 +1,11 @@
 C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCodeGeneratorApi\bin\Debug\netcoreapp2.0\GeoCodeGeneratorApi.deps.json
 C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCodeGeneratorApi\bin\Debug\netcoreapp2.0\GeoCodeGeneratorApi.dll
-C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCodeGeneratorApi\obj\Debug\netcoreapp2.0\GeoCodeGeneratorApi.csprojAssemblyReference.cache
 C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCodeGeneratorApi\obj\Debug\netcoreapp2.0\GeoCodeGeneratorApi.csproj.CoreCompileInputs.cache
 C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCodeGeneratorApi\obj\Debug\netcoreapp2.0\GeoCodeGeneratorApi.AssemblyInfoInputs.cache
 C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCodeGeneratorApi\obj\Debug\netcoreapp2.0\GeoCodeGeneratorApi.AssemblyInfo.cs
 C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCodeGeneratorApi\bin\Debug\netcoreapp2.0\GeoCodeGeneratorApi.pdb
 C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCodeGeneratorApi\obj\Debug\netcoreapp2.0\GeoCodeGeneratorApi.dll
 C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCodeGeneratorApi\obj\Debug\netcoreapp2.0\GeoCodeGeneratorApi.pdb
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCodeGeneratorApi\obj\Debug\netcoreapp2.0\GeoCodeGeneratorApi.csprojResolveAssemblyReference.cache
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCodeGeneratorApi\bin\Debug\netcoreapp2.0\CoreContract.dll
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCodeGeneratorApi\bin\Debug\netcoreapp2.0\CoreContract.pdb

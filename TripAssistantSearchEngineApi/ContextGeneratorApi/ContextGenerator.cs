@@ -1,5 +1,6 @@
 ﻿using ApiAiSDK;
 using System;
+using Core.Contracts;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -17,8 +18,5 @@ namespace TripAssistantSearchEngineApi
             return context;
         }
     }
-    public interface IContextGenerator
-    {
-        string GetContextResponse(string input);
-    }
+    
 }

@@ -3,10 +3,11 @@ C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCode\bin\Debu
 C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCode\bin\Debug\netcoreapp2.0\GeoCode.pdb
 C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCode\bin\Debug\netcoreapp2.0\GeoCodeGeneratorApi.dll
 C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCode\bin\Debug\netcoreapp2.0\GeoCodeGeneratorApi.pdb
-C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCode\obj\Debug\netcoreapp2.0\GeoCode.csprojAssemblyReference.cache
 C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCode\obj\Debug\netcoreapp2.0\GeoCode.csproj.CoreCompileInputs.cache
 C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCode\obj\Debug\netcoreapp2.0\GeoCode.AssemblyInfoInputs.cache
 C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCode\obj\Debug\netcoreapp2.0\GeoCode.AssemblyInfo.cs
-C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCode\obj\Debug\netcoreapp2.0\GeoCode.csproj.CopyComplete
 C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCode\obj\Debug\netcoreapp2.0\GeoCode.dll
 C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCode\obj\Debug\netcoreapp2.0\GeoCode.pdb
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCode\obj\Debug\netcoreapp2.0\GeoCode.csprojResolveAssemblyReference.cache
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCode\bin\Debug\netcoreapp2.0\CoreContract.dll
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\GeoCode\bin\Debug\netcoreapp2.0\CoreContract.pdb

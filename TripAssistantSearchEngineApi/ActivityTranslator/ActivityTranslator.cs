@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using static TripAssistantSearchEngineApi.ActivityTranslator;
+using Core.Contracts;
 
 namespace TripAssistantSearchEngineApi
 {

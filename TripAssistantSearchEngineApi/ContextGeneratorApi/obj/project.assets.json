@@ -217,6 +217,19 @@
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
+      },
+      "CoreContract/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "compile": {
+          "bin/placeholder/CoreContract.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CoreContract.dll": {}
+        }
       }
     }
   },
@@ -717,11 +730,17 @@
         "newtonsoft.json.11.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec"
       ]
+    },
+    "CoreContract/1.0.0": {
+      "type": "project",
+      "path": "../CoreContract/CoreContract.csproj",
+      "msbuildProject": "../CoreContract/CoreContract.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "ApiAiSDK >= 1.6.5",
+      "CoreContract >= 1.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
       "Newtonsoft.Json >= 11.0.2"
     ]
@@ -732,6 +751,9 @@
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
       "projectUniqueName": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\ContextGeneratorApi\\ContextGeneratorApi.csproj",
       "projectName": "ContextGeneratorApi",
@@ -755,7 +777,11 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\CoreContract\\CoreContract.csproj": {
+              "projectPath": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\CoreContract\\CoreContract.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -769,17 +795,17 @@
         "dependencies": {
           "ApiAiSDK": {
             "target": "Package",
-            "version": "[1.6.5, )"
+            "version": "1.6.5"
           },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[2.0.0, )",
+            "version": "2.0",
             "autoReferenced": true
           },
           "Newtonsoft.Json": {
             "target": "Package",
-            "version": "[11.0.2, )"
+            "version": "11.0.2"
           }
         },
         "imports": [

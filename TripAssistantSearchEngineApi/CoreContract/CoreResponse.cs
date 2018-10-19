@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 
-namespace TripAssistantSearchEngineApi
+namespace Core.Contracts
 {
     public class CoreResponse
     {

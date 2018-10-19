@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "0afe7022a65ebdcc7ee31e44b6d7c29503e64d25"
+    "signature": "fe4bf8d9fe4cb16eb20b31284844ffdd75a924e6"
   },
   "compilationOptions": {
     "defines": [
@@ -23,11 +23,13 @@
     ".NETCoreApp,Version=v2.0": {
       "TripAssistantSearchEngineApi/1.0.0": {
         "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "5.0.1",
           "DataContract": "1.0.0",
           "Microsoft.AspNetCore.All": "2.0.9",
           "Microsoft.NETCore.App": "2.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.3",
           "Newtonsoft.Json": "11.0.2",
+          "Serilog": "2.7.1",
           "TripResultsService": "1.0.0"
         },
         "runtime": {
@@ -46,6 +48,29 @@
         },
         "compile": {
           "lib/net35/ApiAiSDK.dll": {}
+        }
+      },
+      "AutoMapper/7.0.1": {
+        "dependencies": {
+          "System.ValueTuple": "4.5.0"
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/AutoMapper.dll": {}
+        },
+        "compile": {
+          "lib/netcoreapp2.0/AutoMapper.dll": {}
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/5.0.1": {
+        "dependencies": {
+          "AutoMapper": "7.0.1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
       "Libuv/1.10.0": {
@@ -1435,7 +1460,7 @@
           "System.Threading.Tasks": "4.3.0",
           "System.Threading.Tasks.Parallel": "4.3.0",
           "System.Threading.Thread": "4.3.0",
-          "System.ValueTuple": "4.4.0",
+          "System.ValueTuple": "4.5.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XDocument": "4.3.0",
           "System.Xml.XPath.XDocument": "4.3.0",
@@ -2066,7 +2091,7 @@
           "Microsoft.Extensions.Logging": "2.0.2",
           "Microsoft.Extensions.Logging.Abstractions": "2.0.2",
           "Microsoft.Extensions.Logging.Configuration": "2.0.2",
-          "System.ValueTuple": "4.4.0"
+          "System.ValueTuple": "4.5.0"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.Logging.AzureAppServices.dll": {}
@@ -2671,6 +2696,18 @@
           }
         }
       },
+      "Serilog/2.7.1": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0",
+          "System.Collections.NonGeneric": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.dll": {}
+        }
+      },
       "SQLitePCLRaw.bundle_green/1.1.7": {
         "dependencies": {
           "SQLitePCLRaw.core": "1.1.7",
@@ -2774,6 +2811,32 @@
         },
         "compile": {
           "lib/netstandard1.5/StackExchange.Redis.StrongName.dll": {}
+        }
+      },
+      "StackExchange.Redis.StrongName.Core/1.1.605": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Collections.Concurrent": "4.3.0",
+          "System.Collections.NonGeneric": "4.3.0",
+          "System.Diagnostics.Tools": "4.3.0",
+          "System.IO.Compression": "4.3.0",
+          "System.IO.FileSystem": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Net.NameResolution": "4.3.0",
+          "System.Net.Security": "4.3.0",
+          "System.Net.Sockets": "4.3.0",
+          "System.Reflection.Emit": "4.3.0",
+          "System.Reflection.Emit.Lightweight": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Runtime.InteropServices.RuntimeInformation": "4.3.0",
+          "System.Security.Cryptography.Algorithms": "4.3.0",
+          "System.Security.Cryptography.X509Certificates": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0",
+          "System.Threading.Thread": "4.3.0",
+          "System.Threading.ThreadPool": "4.3.0",
+          "System.Threading.Timer": "4.3.0"
         }
       },
       "System.AppContext/4.3.0": {
@@ -3888,7 +3951,7 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.ValueTuple/4.4.0": {},
+      "System.ValueTuple/4.5.0": {},
       "System.Xml.ReaderWriter/4.3.0": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -3999,38 +4062,27 @@
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
       },
-      "ActivityApi/1.0.0": {
+      "ActivityApiProvider/1.0.0": {
         "dependencies": {
-          "Newtonsoft.Json": "11.0.2"
+          "CoreContract": "1.0.0",
+          "Newtonsoft.Json": "11.0.2",
+          "RedisDataProvider": "1.0.0"
         },
         "runtime": {
-          "ActivityApi.dll": {}
+          "ActivityApiProvider.dll": {}
         },
         "compile": {
-          "ActivityApi.dll": {}
-        }
-      },
-      "ActivityTranslator/1.0.0": {
-        "dependencies": {
-          "ActivityApi": "1.0.0",
-          "DataContract": "1.0.0",
-          "Newtonsoft.Json": "11.0.2"
-        },
-        "runtime": {
-          "ActivityTranslator.dll": {}
-        },
-        "compile": {
-          "ActivityTranslator.dll": {}
+          "ActivityApiProvider.dll": {}
         }
       },
       "ContextAnalyzerService/1.0.0": {
         "dependencies": {
-          "ActivityApi": "1.0.0",
+          "ActivityApiProvider": "1.0.0",
           "ContextCheckerService": "1.0.0",
           "CoreContract": "1.0.0",
           "CoreResponseGenerator": "1.0.0",
           "GeoCode": "1.0.0",
-          "HotelApi": "1.0.0",
+          "HotelApiProvider": "1.0.0",
           "Newtonsoft.Json": "11.0.2"
         },
         "runtime": {
@@ -4054,6 +4106,7 @@
       "ContextGeneratorApi/1.0.0": {
         "dependencies": {
           "ApiAiSDK": "1.6.5",
+          "CoreContract": "1.0.0",
           "Newtonsoft.Json": "11.0.2"
         },
         "runtime": {
@@ -4109,6 +4162,7 @@
       },
       "GeoCodeGeneratorApi/1.0.0": {
         "dependencies": {
+          "CoreContract": "1.0.0",
           "Newtonsoft.Json": "11.0.2"
         },
         "runtime": {
@@ -4118,36 +4172,37 @@
           "GeoCodeGeneratorApi.dll": {}
         }
       },
-      "HotelApi/1.0.0": {
+      "HotelApiProvider/1.0.0": {
         "dependencies": {
-          "Newtonsoft.Json": "11.0.2"
+          "CoreContract": "1.0.0",
+          "Newtonsoft.Json": "11.0.2",
+          "RedisDataProvider": "1.0.0"
         },
         "runtime": {
-          "HotelApi.dll": {}
+          "HotelApiProvider.dll": {}
         },
         "compile": {
-          "HotelApi.dll": {}
+          "HotelApiProvider.dll": {}
         }
       },
-      "HotelTranslator/1.0.0": {
+      "RedisDataProvider/1.0.0": {
         "dependencies": {
-          "DataContract": "1.0.0",
-          "Newtonsoft.Json": "11.0.2"
+          "CoreContract": "1.0.0",
+          "Newtonsoft.Json": "11.0.2",
+          "StackExchange.Redis.StrongName.Core": "1.1.605"
         },
         "runtime": {
-          "HotelTranslator.dll": {}
+          "RedisDataProvider.dll": {}
         },
         "compile": {
-          "HotelTranslator.dll": {}
+          "RedisDataProvider.dll": {}
         }
       },
       "TripResultsService/1.0.0": {
         "dependencies": {
-          "ActivityTranslator": "1.0.0",
           "ContextAnalyzerService": "1.0.0",
           "CoreContract": "1.0.0",
           "DataContract": "1.0.0",
-          "HotelTranslator": "1.0.0",
           "Newtonsoft.Json": "11.0.2"
         },
         "runtime": {
@@ -4347,6 +4402,20 @@
       "sha512": "sha512-yo81xpa0clRQOcBuZYpC+9Mlo/3wzPu9htK6Opmzo0CIu9lkrMzaK8xFB+DpzqPwt4Bt0UdT/n0WkedFit74Tw==",
       "path": "apiaisdk/1.6.5",
       "hashPath": "apiaisdk.1.6.5.nupkg.sha512"
+    },
+    "AutoMapper/7.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1qKMJ1WPs42VkgeQ5iXRDWf46+iUqYM/yColAvAeDQhUgQNsgzSxjMDHQc7dL2x/o0JY8TwG+obR7vbvgh+Y3g==",
+      "path": "automapper/7.0.1",
+      "hashPath": "automapper.7.0.1.nupkg.sha512"
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/5.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FsPcuVkaAj232P6yrSxnQybBnwawvsg3C65l+BDShGaU9jfANGjMY2evNlQ8RAEezrutpeQT9LFWQJ+sXhaHPw==",
+      "path": "automapper.extensions.microsoft.dependencyinjection/5.0.1",
+      "hashPath": "automapper.extensions.microsoft.dependencyinjection.5.0.1.nupkg.sha512"
     },
     "Libuv/1.10.0": {
       "type": "package",
@@ -5727,6 +5796,13 @@
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
     },
+    "Serilog/2.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mqFJqhgmTv4th/nC1roPMWjGB3YSRH34J5XKq2OqzolJfUO4H3eeM7EJIpOjXV2XpIxFsGgBqiuhNxUt8WMdtg==",
+      "path": "serilog/2.7.1",
+      "hashPath": "serilog.2.7.1.nupkg.sha512"
+    },
     "SQLitePCLRaw.bundle_green/1.1.7": {
       "type": "package",
       "serviceable": true,
@@ -5775,6 +5851,13 @@
       "sha512": "sha512-qrfSB1BnmM17V20A4yvvNA0HNiDgnBd/CcjaeMKMA4qtup1uuBUMyhl20oj31fRVo71E/fXTbmQCuM9ytBJs6w==",
       "path": "stackexchange.redis.strongname/1.2.4",
       "hashPath": "stackexchange.redis.strongname.1.2.4.nupkg.sha512"
+    },
+    "StackExchange.Redis.StrongName.Core/1.1.605": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+VuyBBLv/u+Yh/efLAMlbEKbhtTv8H1hgY03guelpOPuFyz7joRsxq1p6PJZk4Jvq9DcW2MD7NKhWbFi/u4OQw==",
+      "path": "stackexchange.redis.strongname.core/1.1.605",
+      "hashPath": "stackexchange.redis.strongname.core.1.1.605.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",
@@ -6392,12 +6475,12 @@
       "path": "system.threading.timer/4.3.0",
       "hashPath": "system.threading.timer.4.3.0.nupkg.sha512"
     },
-    "System.ValueTuple/4.4.0": {
+    "System.ValueTuple/4.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-BahUww/+mdP4ARCAh2RQhQTg13wYLVrBb9SYVgW8ZlrwjraGCXHGjo0oIiUfZ34LUZkMMR+RAzR7dEY4S1HeQQ==",
-      "path": "system.valuetuple/4.4.0",
-      "hashPath": "system.valuetuple.4.4.0.nupkg.sha512"
+      "sha512": "sha512-fa3P1cPe2SlrjCjJ/yc3mcXkDj4GQORmileNFYBtBZh2qddzwRubagAkj8yz/yF9oLvJVqaZYar9l2SCqNKDJg==",
+      "path": "system.valuetuple/4.5.0",
+      "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
     },
     "System.Xml.ReaderWriter/4.3.0": {
       "type": "package",
@@ -6448,12 +6531,7 @@
       "path": "windowsazure.storage/8.1.4",
       "hashPath": "windowsazure.storage.8.1.4.nupkg.sha512"
     },
-    "ActivityApi/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "ActivityTranslator/1.0.0": {
+    "ActivityApiProvider/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -6498,12 +6576,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "HotelApi/1.0.0": {
+    "HotelApiProvider/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "HotelTranslator/1.0.0": {
+    "RedisDataProvider/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

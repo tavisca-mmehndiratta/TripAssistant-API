@@ -1,0 +1,11 @@
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\RedisDataProvider\bin\Debug\netcoreapp2.0\RedisDataProvider.deps.json
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\RedisDataProvider\bin\Debug\netcoreapp2.0\RedisDataProvider.dll
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\RedisDataProvider\obj\Debug\netcoreapp2.0\RedisDataProvider.csproj.CoreCompileInputs.cache
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\RedisDataProvider\obj\Debug\netcoreapp2.0\RedisDataProvider.AssemblyInfoInputs.cache
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\RedisDataProvider\obj\Debug\netcoreapp2.0\RedisDataProvider.AssemblyInfo.cs
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\RedisDataProvider\obj\Debug\netcoreapp2.0\RedisDataProvider.csprojResolveAssemblyReference.cache
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\RedisDataProvider\bin\Debug\netcoreapp2.0\RedisDataProvider.pdb
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\RedisDataProvider\obj\Debug\netcoreapp2.0\RedisDataProvider.dll
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\RedisDataProvider\obj\Debug\netcoreapp2.0\RedisDataProvider.pdb
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\RedisDataProvider\bin\Debug\netcoreapp2.0\CoreContract.dll
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\RedisDataProvider\bin\Debug\netcoreapp2.0\CoreContract.pdb

@@ -7,7 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Core.Contracts;
 using Microsoft.Extensions.Options;
+using AutoMapper;
 
 namespace TripAssistantSearchEngineApi
 {
@@ -35,6 +37,10 @@ namespace TripAssistantSearchEngineApi
             services.AddTransient<IActivityApi, ActivityApi>();
             services.AddTransient<IHotelApi, HotelsApi>();
             services.AddTransient<ICoreResponseGenerator, CoreResponseGenerator>();
+            services.AddTransient<IActivityCache, ActivityCache>();
+            services.AddTransient<IHotelCache, HotelCache>();
+            services.AddTransient<ICoreResponseGenerator, CoreResponseGenerator>();
+            services.AddAutoMapper(x => x.AddProfile(new AutoMapperInitializer()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

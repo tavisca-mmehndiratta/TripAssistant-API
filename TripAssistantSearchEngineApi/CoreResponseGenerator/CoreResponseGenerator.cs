@@ -1,12 +1,14 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Core.Contracts;
+using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 
 namespace TripAssistantSearchEngineApi
 {
     public class CoreResponseGenerator : ICoreResponseGenerator
     {
-        CoreResponse coreResponse = new CoreResponse();
-        public CoreResponse MakeResponse(JObject hotels, JObject activities, string type, string res)
+        Response coreResponse = new Response();
+        public Response MakeResponse(string input,List<Hotel> hotels, List<Activity> activities, string type, string res)
         {
             coreResponse.HotelList = hotels;
             coreResponse.ActivityList = activities;
@@ -15,8 +17,5 @@ namespace TripAssistantSearchEngineApi
             return coreResponse;
         }
     }
-    public interface ICoreResponseGenerator
-    {
-        CoreResponse MakeResponse(JObject hotels, JObject activities, string type, string res);
-    }
+    
 }

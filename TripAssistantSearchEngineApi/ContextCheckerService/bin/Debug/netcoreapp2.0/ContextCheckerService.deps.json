@@ -30,10 +30,19 @@
       "ContextGeneratorApi/1.0.0": {
         "dependencies": {
           "ApiAiSDK": "1.6.5",
+          "CoreContract": "1.0.0",
           "Newtonsoft.Json": "11.0.2"
         },
         "runtime": {
           "ContextGeneratorApi.dll": {}
+        }
+      },
+      "CoreContract/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "CoreContract.dll": {}
         }
       }
     }
@@ -59,6 +68,11 @@
       "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
     },
     "ContextGeneratorApi/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CoreContract/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

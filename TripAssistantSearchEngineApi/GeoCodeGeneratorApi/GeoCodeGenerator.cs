@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using Core.Contracts;
 using System.Collections.Generic;
 using System.Net;
 
@@ -38,9 +39,6 @@ namespace TripAssistantSearchEngineApi
             return locations;
         }
     }
-    public interface IGeoCodeGenerator
-    {
-        List<double> GetGeoLocation(string url);
-    }
+   
    
 }

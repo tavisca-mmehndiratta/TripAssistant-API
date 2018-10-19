@@ -9,11 +9,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ActivityTranslator\ActivityTranslator.csproj" />
     <ProjectReference Include="..\ContextAnalyzerService\ContextAnalyzerService.csproj" />
     <ProjectReference Include="..\CoreContract\CoreContract.csproj" />
     <ProjectReference Include="..\DataContract\DataContract.csproj" />
-    <ProjectReference Include="..\HotelTranslator\HotelTranslator.csproj" />
   </ItemGroup>
 
 </Project>

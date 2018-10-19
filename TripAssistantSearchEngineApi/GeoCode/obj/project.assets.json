@@ -206,10 +206,24 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "CoreContract/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "compile": {
+          "bin/placeholder/CoreContract.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CoreContract.dll": {}
+        }
+      },
       "GeoCodeGeneratorApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
+          "CoreContract": "1.0.0",
           "Newtonsoft.Json": "11.0.2"
         },
         "compile": {
@@ -707,6 +721,11 @@
         "newtonsoft.json.nuspec"
       ]
     },
+    "CoreContract/1.0.0": {
+      "type": "project",
+      "path": "../CoreContract/CoreContract.csproj",
+      "msbuildProject": "../CoreContract/CoreContract.csproj"
+    },
     "GeoCodeGeneratorApi/1.0.0": {
       "type": "project",
       "path": "../GeoCodeGeneratorApi/GeoCodeGeneratorApi.csproj",
@@ -725,6 +744,9 @@
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
       "projectUniqueName": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\GeoCode\\GeoCode.csproj",
       "projectName": "GeoCode",
@@ -767,7 +789,7 @@
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[2.0.0, )",
+            "version": "2.0",
             "autoReferenced": true
           }
         },

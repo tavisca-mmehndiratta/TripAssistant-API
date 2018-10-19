@@ -726,6 +726,9 @@
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
       "projectUniqueName": "C:\\Users\\mmehndiratta\\source\\repos\\TripAssistantSearchEngineApi\\HotelTranslator\\HotelTranslator.csproj",
       "projectName": "HotelTranslator",
@@ -768,12 +771,12 @@
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[2.0.0, )",
+            "version": "2.0",
             "autoReferenced": true
           },
           "Newtonsoft.Json": {
             "target": "Package",
-            "version": "[11.0.2, )"
+            "version": "11.0.2"
           }
         },
         "imports": [

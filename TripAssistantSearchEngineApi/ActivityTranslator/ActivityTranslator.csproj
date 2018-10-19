@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ActivityApi\ActivityApi.csproj" />
+    <ProjectReference Include="..\CoreContract\CoreContract.csproj" />
     <ProjectReference Include="..\DataContract\DataContract.csproj" />
   </ItemGroup>
 

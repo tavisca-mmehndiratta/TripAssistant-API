@@ -1,0 +1,13 @@
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\HotelApi\bin\Debug\netcoreapp2.0\HotelApiProvider.deps.json
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\HotelApi\bin\Debug\netcoreapp2.0\HotelApiProvider.dll
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\HotelApi\bin\Debug\netcoreapp2.0\HotelApiProvider.pdb
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\HotelApi\bin\Debug\netcoreapp2.0\CoreContract.dll
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\HotelApi\bin\Debug\netcoreapp2.0\CoreContract.pdb
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\HotelApi\obj\Debug\netcoreapp2.0\HotelApiProvider.csprojResolveAssemblyReference.cache
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\HotelApi\obj\Debug\netcoreapp2.0\HotelApiProvider.csproj.CoreCompileInputs.cache
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\HotelApi\obj\Debug\netcoreapp2.0\HotelApiProvider.AssemblyInfoInputs.cache
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\HotelApi\obj\Debug\netcoreapp2.0\HotelApiProvider.AssemblyInfo.cs
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\HotelApi\obj\Debug\netcoreapp2.0\HotelApiProvider.dll
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\HotelApi\obj\Debug\netcoreapp2.0\HotelApiProvider.pdb
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\HotelApi\bin\Debug\netcoreapp2.0\RedisDataProvider.dll
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\HotelApi\bin\Debug\netcoreapp2.0\RedisDataProvider.pdb

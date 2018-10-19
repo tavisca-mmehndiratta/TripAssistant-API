@@ -1,7 +1,10 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Core.Contracts;
+using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using static TripAssistantSearchEngineApi.HotelsApi;
 
 namespace TripAssistantSearchEngineApi
 {
@@ -13,8 +16,8 @@ namespace TripAssistantSearchEngineApi
         private IHotelApi _hotelApi;
         private IContextCheckerService _contextChecker;
         string typeResponse = "";
-        JObject activityResponse = null;
-        JObject hotelResponse = null;
+        List<Activity> activityResponse = null;
+        List<Hotel> hotelResponse = null;
         string resultantResponse = "";
         string[] response;
         string splitResponse;
@@ -28,7 +31,7 @@ namespace TripAssistantSearchEngineApi
             _contextChecker = contextChecker;
             _geoCode = geoCode;
         }
-        public CoreResponse GetResultsFromApi(string input, string location)
+        public Response GetResultsFromApi(string input, string location)
         {
             splitResponse = _contextChecker.GetFilteredQueryResponse(input);
             response = splitResponse.Split(' ');
@@ -48,11 +51,12 @@ namespace TripAssistantSearchEngineApi
 
                 string[] keywords = queryString.Split(' ');
                 geoCode = _geoCode.GetGeoCodeOfCity(keywords[0]);
-                activityResponse = _activityApi.GetActivities(geoCode);
+
+                activityResponse = _activityApi.GetActivities(geoCode,keywords[0]);
                 if (keywords[1] != "1")
                 {
-                    queryString = _geoCode.GetCumulativeGeoCode();
-                    hotelResponse = _hotelApi.GetHotelDetails(queryString);
+                    queryString = _geoCode.GetCumulativeGeoCode(geoCode);
+                    hotelResponse = _hotelApi.GetHotelDetails(queryString, keywords[0]);
                 }
             }
             else if (response[0].Equals("no"))
@@ -69,12 +73,9 @@ namespace TripAssistantSearchEngineApi
                 typeResponse = "req";
                 resultantResponse = "This Request was beyond my power!!!";
             }
-            CoreResponse finalResults = _coreResponseGenerator.MakeResponse(hotelResponse, activityResponse, typeResponse, resultantResponse);
+            Response finalResults = _coreResponseGenerator.MakeResponse(input,hotelResponse, activityResponse, typeResponse, resultantResponse);
             return finalResults;
         }
     }
-    public interface IContextAnalyzerService
-    {
-        CoreResponse GetResultsFromApi(string input, string location);
-    }
+    
 }

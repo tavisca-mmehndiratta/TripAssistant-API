@@ -9,12 +9,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ActivityApi\ActivityApi.csproj" />
+    <ProjectReference Include="..\ActivityApi\ActivityApiProvider.csproj" />
     <ProjectReference Include="..\ContextCheckerService\ContextCheckerService.csproj" />
     <ProjectReference Include="..\CoreContract\CoreContract.csproj" />
     <ProjectReference Include="..\CoreResponseGenerator\CoreResponseGenerator.csproj" />
     <ProjectReference Include="..\GeoCode\GeoCode.csproj" />
-    <ProjectReference Include="..\HotelApi\HotelApi.csproj" />
+    <ProjectReference Include="..\HotelApi\HotelApiProvider.csproj" />
   </ItemGroup>
 
 </Project>

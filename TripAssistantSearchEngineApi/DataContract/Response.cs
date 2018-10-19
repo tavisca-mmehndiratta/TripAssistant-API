@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TripAssistantSearchEngineApi
+namespace Data.Contract
 {
     public class Response
     {

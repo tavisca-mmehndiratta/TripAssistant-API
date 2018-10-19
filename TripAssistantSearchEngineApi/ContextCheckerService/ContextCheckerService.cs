@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Core.Contracts;
 namespace TripAssistantSearchEngineApi
 {
     public class ContextCheckerService : IContextCheckerService
@@ -79,8 +79,5 @@ namespace TripAssistantSearchEngineApi
             return result;
         }
     }
-    public interface IContextCheckerService
-    {
-        string GetFilteredQueryResponse(string input);
-    }
+    
 }

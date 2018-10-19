@@ -3,10 +3,11 @@ C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\ContextCheckerSe
 C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\ContextCheckerService\bin\Debug\netcoreapp2.0\ContextCheckerService.pdb
 C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\ContextCheckerService\bin\Debug\netcoreapp2.0\ContextGeneratorApi.dll
 C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\ContextCheckerService\bin\Debug\netcoreapp2.0\ContextGeneratorApi.pdb
-C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\ContextCheckerService\obj\Debug\netcoreapp2.0\ContextCheckerService.csprojAssemblyReference.cache
 C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\ContextCheckerService\obj\Debug\netcoreapp2.0\ContextCheckerService.csproj.CoreCompileInputs.cache
 C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\ContextCheckerService\obj\Debug\netcoreapp2.0\ContextCheckerService.AssemblyInfoInputs.cache
 C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\ContextCheckerService\obj\Debug\netcoreapp2.0\ContextCheckerService.AssemblyInfo.cs
-C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\ContextCheckerService\obj\Debug\netcoreapp2.0\ContextCheckerService.csproj.CopyComplete
 C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\ContextCheckerService\obj\Debug\netcoreapp2.0\ContextCheckerService.dll
 C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\ContextCheckerService\obj\Debug\netcoreapp2.0\ContextCheckerService.pdb
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\ContextCheckerService\obj\Debug\netcoreapp2.0\ContextCheckerService.csprojResolveAssemblyReference.cache
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\ContextCheckerService\bin\Debug\netcoreapp2.0\CoreContract.dll
+C:\Users\mmehndiratta\source\repos\TripAssistantSearchEngineApi\ContextCheckerService\bin\Debug\netcoreapp2.0\CoreContract.pdb

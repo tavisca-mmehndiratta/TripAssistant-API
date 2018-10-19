@@ -1,39 +1,37 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27703.2042
+VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripAssistantSearchEngineApi", "TripAssistantSearchEngineApi\TripAssistantSearchEngineApi.csproj", "{952DB104-6EA0-415A-8B81-EC63FBA59415}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TripAssistantSearchEngineApi", "TripAssistantSearchEngineApi\TripAssistantSearchEngineApi.csproj", "{952DB104-6EA0-415A-8B81-EC63FBA59415}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccessLayer", "DataAccessLayer", "{0C9EDAB9-C71C-46AF-9D6D-A4569C6AA39C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContextGeneratorApi", "ContextGeneratorApi\ContextGeneratorApi.csproj", "{FC9335AC-723B-4BC8-848C-8384DA291052}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContextGeneratorApi", "ContextGeneratorApi\ContextGeneratorApi.csproj", "{FC9335AC-723B-4BC8-848C-8384DA291052}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelApi", "HotelApi\HotelApi.csproj", "{026B2410-0D04-4E1A-A220-67A8955AF7C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelApiProvider", "HotelApi\HotelApiProvider.csproj", "{026B2410-0D04-4E1A-A220-67A8955AF7C9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{7F9BDDDA-2600-45C9-B469-6EF33DC46FA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActivityTranslator", "ActivityTranslator\ActivityTranslator.csproj", "{4A350700-6A43-4D62-A9FE-F5950A99B654}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TripResultsService", "TripResultsService\TripResultsService.csproj", "{69D22419-B0DB-4383-A3D0-7B38C9E1284C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelTranslator", "HotelTranslator\HotelTranslator.csproj", "{EB543D9E-8EC0-47BD-A6F5-9E55AB9DF88E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataContract", "DataContract\DataContract.csproj", "{BA5C7572-6DD9-4951-8D4A-0D21E8539220}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripResultsService", "TripResultsService\TripResultsService.csproj", "{69D22419-B0DB-4383-A3D0-7B38C9E1284C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreContract", "CoreContract\CoreContract.csproj", "{F18AD55E-B7F2-42F8-BE20-491F25EA8175}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataContract", "DataContract\DataContract.csproj", "{BA5C7572-6DD9-4951-8D4A-0D21E8539220}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContextAnalyzerService", "ContextAnalyzerService\ContextAnalyzerService.csproj", "{ADE979F5-3A80-4E58-9090-80A26AE60303}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreContract", "CoreContract\CoreContract.csproj", "{F18AD55E-B7F2-42F8-BE20-491F25EA8175}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContextCheckerService", "ContextCheckerService\ContextCheckerService.csproj", "{564AC73F-C539-4B28-9FF9-DE0B379A00C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContextAnalyzerService", "ContextAnalyzerService\ContextAnalyzerService.csproj", "{ADE979F5-3A80-4E58-9090-80A26AE60303}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoCodeGeneratorApi", "GeoCodeGeneratorApi\GeoCodeGeneratorApi.csproj", "{12C88F74-30B9-45DA-99C2-992C11AF7750}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContextCheckerService", "ContextCheckerService\ContextCheckerService.csproj", "{564AC73F-C539-4B28-9FF9-DE0B379A00C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoCode", "GeoCode\GeoCode.csproj", "{52B81D50-55AC-42EA-A972-AE2D4EAE59B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoCodeGeneratorApi", "GeoCodeGeneratorApi\GeoCodeGeneratorApi.csproj", "{12C88F74-30B9-45DA-99C2-992C11AF7750}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActivityApiProvider", "ActivityApi\ActivityApiProvider.csproj", "{3B84EAB7-0352-4CEC-85D1-E38984F92442}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoCode", "GeoCode\GeoCode.csproj", "{52B81D50-55AC-42EA-A972-AE2D4EAE59B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreResponseGenerator", "CoreResponseGenerator\CoreResponseGenerator.csproj", "{8C5BC1C6-EC26-435A-A2BD-FA982ABAB42D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActivityApi", "ActivityApi\ActivityApi.csproj", "{3B84EAB7-0352-4CEC-85D1-E38984F92442}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreResponseGenerator", "CoreResponseGenerator\CoreResponseGenerator.csproj", "{8C5BC1C6-EC26-435A-A2BD-FA982ABAB42D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisDataProvider", "RedisDataProvider\RedisDataProvider.csproj", "{BB5FE5AA-6447-4F59-9DB0-93E9973E8159}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,14 +51,6 @@ Global
 		{026B2410-0D04-4E1A-A220-67A8955AF7C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{026B2410-0D04-4E1A-A220-67A8955AF7C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{026B2410-0D04-4E1A-A220-67A8955AF7C9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4A350700-6A43-4D62-A9FE-F5950A99B654}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4A350700-6A43-4D62-A9FE-F5950A99B654}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4A350700-6A43-4D62-A9FE-F5950A99B654}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4A350700-6A43-4D62-A9FE-F5950A99B654}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EB543D9E-8EC0-47BD-A6F5-9E55AB9DF88E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB543D9E-8EC0-47BD-A6F5-9E55AB9DF88E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB543D9E-8EC0-47BD-A6F5-9E55AB9DF88E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB543D9E-8EC0-47BD-A6F5-9E55AB9DF88E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{69D22419-B0DB-4383-A3D0-7B38C9E1284C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{69D22419-B0DB-4383-A3D0-7B38C9E1284C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69D22419-B0DB-4383-A3D0-7B38C9E1284C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -97,6 +87,10 @@ Global
 		{8C5BC1C6-EC26-435A-A2BD-FA982ABAB42D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C5BC1C6-EC26-435A-A2BD-FA982ABAB42D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C5BC1C6-EC26-435A-A2BD-FA982ABAB42D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB5FE5AA-6447-4F59-9DB0-93E9973E8159}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB5FE5AA-6447-4F59-9DB0-93E9973E8159}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB5FE5AA-6447-4F59-9DB0-93E9973E8159}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB5FE5AA-6447-4F59-9DB0-93E9973E8159}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -104,15 +98,14 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{FC9335AC-723B-4BC8-848C-8384DA291052} = {0C9EDAB9-C71C-46AF-9D6D-A4569C6AA39C}
 		{026B2410-0D04-4E1A-A220-67A8955AF7C9} = {0C9EDAB9-C71C-46AF-9D6D-A4569C6AA39C}
-		{4A350700-6A43-4D62-A9FE-F5950A99B654} = {7F9BDDDA-2600-45C9-B469-6EF33DC46FA7}
-		{EB543D9E-8EC0-47BD-A6F5-9E55AB9DF88E} = {7F9BDDDA-2600-45C9-B469-6EF33DC46FA7}
 		{69D22419-B0DB-4383-A3D0-7B38C9E1284C} = {7F9BDDDA-2600-45C9-B469-6EF33DC46FA7}
 		{ADE979F5-3A80-4E58-9090-80A26AE60303} = {7F9BDDDA-2600-45C9-B469-6EF33DC46FA7}
 		{564AC73F-C539-4B28-9FF9-DE0B379A00C6} = {7F9BDDDA-2600-45C9-B469-6EF33DC46FA7}
 		{12C88F74-30B9-45DA-99C2-992C11AF7750} = {0C9EDAB9-C71C-46AF-9D6D-A4569C6AA39C}
-		{52B81D50-55AC-42EA-A972-AE2D4EAE59B8} = {0C9EDAB9-C71C-46AF-9D6D-A4569C6AA39C}
+		{52B81D50-55AC-42EA-A972-AE2D4EAE59B8} = {7F9BDDDA-2600-45C9-B469-6EF33DC46FA7}
 		{3B84EAB7-0352-4CEC-85D1-E38984F92442} = {0C9EDAB9-C71C-46AF-9D6D-A4569C6AA39C}
 		{8C5BC1C6-EC26-435A-A2BD-FA982ABAB42D} = {7F9BDDDA-2600-45C9-B469-6EF33DC46FA7}
+		{BB5FE5AA-6447-4F59-9DB0-93E9973E8159} = {0C9EDAB9-C71C-46AF-9D6D-A4569C6AA39C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D4930BE6-0EB2-4900-B15C-FC49DB4B4BAF}

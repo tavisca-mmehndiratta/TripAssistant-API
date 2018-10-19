@@ -4,6 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using CoreContract = Core.Contracts;
+using DataContract = Data.Contract;
+using AutoMapper;
 
 namespace TripAssistantSearchEngineApi
 {
@@ -11,17 +14,19 @@ namespace TripAssistantSearchEngineApi
     [Route("api/SearchResults")]
     public class SearchResultsController : Controller
     {
-        private ITripResultsService _tripResults;
-        public SearchResultsController(ITripResultsService iTripResult)
+        private CoreContract.ITripResultsService _tripResults;
+        private readonly IMapper _mapper;
+        public SearchResultsController(CoreContract.ITripResultsService iTripResult, IMapper mapper)
         {
             _tripResults = iTripResult;
+            _mapper = mapper;
         }
         [HttpGet]
-        public Response GetSearchResults([FromQuery] string input, [FromQuery] string location)
+        public DataContract.Response GetSearchResults([FromQuery] string input, [FromQuery] string location)
         {
-            Response response = new Response();
+            CoreContract.Response response = new CoreContract.Response();
             response = _tripResults.FetchResultsFromAPI(input, location);
-            return response;
+            return _mapper.Map<DataContract.Response>(response);
         }
 
     }
