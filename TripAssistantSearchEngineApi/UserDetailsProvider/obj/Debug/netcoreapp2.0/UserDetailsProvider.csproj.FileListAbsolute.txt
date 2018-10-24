@@ -1,0 +1,12 @@
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\UserDetailsProvider\bin\Debug\netcoreapp2.0\UserDetailsProvider.deps.json
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\UserDetailsProvider\bin\Debug\netcoreapp2.0\UserDetailsProvider.dll
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\UserDetailsProvider\bin\Debug\netcoreapp2.0\UserDetailsProvider.pdb
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\UserDetailsProvider\bin\Debug\netcoreapp2.0\CoreContract.dll
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\UserDetailsProvider\bin\Debug\netcoreapp2.0\CoreContract.pdb
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\UserDetailsProvider\obj\Debug\netcoreapp2.0\UserDetailsProvider.csprojAssemblyReference.cache
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\UserDetailsProvider\obj\Debug\netcoreapp2.0\UserDetailsProvider.csproj.CoreCompileInputs.cache
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\UserDetailsProvider\obj\Debug\netcoreapp2.0\UserDetailsProvider.AssemblyInfoInputs.cache
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\UserDetailsProvider\obj\Debug\netcoreapp2.0\UserDetailsProvider.AssemblyInfo.cs
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\UserDetailsProvider\obj\Debug\netcoreapp2.0\UserDetailsProvider.csproj.CopyComplete
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\UserDetailsProvider\obj\Debug\netcoreapp2.0\UserDetailsProvider.dll
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\UserDetailsProvider\obj\Debug\netcoreapp2.0\UserDetailsProvider.pdb
