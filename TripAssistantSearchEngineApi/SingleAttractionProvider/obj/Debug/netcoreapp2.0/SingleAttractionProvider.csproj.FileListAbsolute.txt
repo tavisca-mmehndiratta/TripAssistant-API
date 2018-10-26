@@ -1,0 +1,11 @@
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\SingleAttractionProvider\bin\Debug\netcoreapp2.0\SingleAttractionProvider.deps.json
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\SingleAttractionProvider\bin\Debug\netcoreapp2.0\SingleAttractionProvider.dll
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\SingleAttractionProvider\bin\Debug\netcoreapp2.0\SingleAttractionProvider.pdb
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\SingleAttractionProvider\bin\Debug\netcoreapp2.0\CoreContract.dll
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\SingleAttractionProvider\bin\Debug\netcoreapp2.0\CoreContract.pdb
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\SingleAttractionProvider\obj\Debug\netcoreapp2.0\SingleAttractionProvider.csprojResolveAssemblyReference.cache
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\SingleAttractionProvider\obj\Debug\netcoreapp2.0\SingleAttractionProvider.csproj.CoreCompileInputs.cache
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\SingleAttractionProvider\obj\Debug\netcoreapp2.0\SingleAttractionProvider.AssemblyInfoInputs.cache
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\SingleAttractionProvider\obj\Debug\netcoreapp2.0\SingleAttractionProvider.AssemblyInfo.cs
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\SingleAttractionProvider\obj\Debug\netcoreapp2.0\SingleAttractionProvider.dll
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\SingleAttractionProvider\obj\Debug\netcoreapp2.0\SingleAttractionProvider.pdb
