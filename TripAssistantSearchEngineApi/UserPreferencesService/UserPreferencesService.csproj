@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CoreContract\CoreContract.csproj" />
+    <ProjectReference Include="..\SingleActivityProvider\SingleActivityProvider.csproj" />
+    <ProjectReference Include="..\UserDetailsProvider\UserDetailsProvider.csproj" />
+  </ItemGroup>
+
+</Project>

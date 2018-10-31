@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.console" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ActivityApi\ActivityApiProvider.csproj" />
+    <ProjectReference Include="..\ContextAnalyzerService\ContextAnalyzerService.csproj" />
+    <ProjectReference Include="..\ContextCheckerService\ContextCheckerService.csproj" />
+    <ProjectReference Include="..\ContextGeneratorApi\ContextGeneratorApi.csproj" />
+    <ProjectReference Include="..\CoreContract\CoreContract.csproj" />
+    <ProjectReference Include="..\CoreResponseGenerator\CoreResponseGenerator.csproj" />
+    <ProjectReference Include="..\GeoCodeGeneratorApi\GeoCodeGeneratorApi.csproj" />
+    <ProjectReference Include="..\GeoCode\GeoCode.csproj" />
+    <ProjectReference Include="..\HotelApi\HotelApiProvider.csproj" />
+    <ProjectReference Include="..\RedisDataProvider\RedisDataProvider.csproj" />
+    <ProjectReference Include="..\SingleActivityProvider\SingleActivityProvider.csproj" />
+    <ProjectReference Include="..\SingleAttractionProvider\SingleAttractionProvider.csproj" />
+    <ProjectReference Include="..\TrainingDataLogger\TrainingDataLogger.csproj" />
+    <ProjectReference Include="..\TripAssistantSearchEngineApi\TripAssistantSearchEngineApi.csproj" />
+    <ProjectReference Include="..\TripResultsService\TripResultsService.csproj" />
+    <ProjectReference Include="..\UserDetailsProvider\UserDetailsProvider.csproj" />
+    <ProjectReference Include="..\UserPreferencesService\UserPreferencesService.csproj" />
+  </ItemGroup>
+
+</Project>
