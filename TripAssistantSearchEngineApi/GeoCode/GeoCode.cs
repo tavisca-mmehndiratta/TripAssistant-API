@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Options;
 using Core.Contracts;
 
 namespace TripAssistantSearchEngineApi
@@ -9,15 +10,13 @@ namespace TripAssistantSearchEngineApi
     {
         List<double> locations = new List<double>();
         string geoCode = "";
+        private readonly AppSetting _appSetting;
         private readonly IGeoCodeGenerator _geoCodeGenerator;
-        private readonly string _startFieldOfCumulativeUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=";
-        private readonly string _endFieldOfCumulativeUrl = "&radius=300000&keyword=point%20of%20interest&key=AIzaSyA9v-ByUMauD8TazXdViq_f7RF-EHru86A";
-        private readonly string _startFieldOfSingleUrl = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=";
-        private readonly string _endFieldOfSingleUrl = "&key=AIzaSyA9v-ByUMauD8TazXdViq_f7RF-EHru86A";
 
-        public GeoCode(IGeoCodeGenerator geoCodeGenerator)
+        public GeoCode(IOptions<AppSetting> appSetting,IGeoCodeGenerator geoCodeGenerator)
         {
             _geoCodeGenerator = geoCodeGenerator;
+            _appSetting = appSetting.Value;
         }
 
         public string GetCumulativeGeoCode(string geocode)
@@ -25,7 +24,7 @@ namespace TripAssistantSearchEngineApi
             geoCode = "";
             try
             {
-                string url = _startFieldOfCumulativeUrl + geocode + _endFieldOfCumulativeUrl;
+                string url = _appSetting.GoogleActivityBaseUrl + geocode + "&radius=" + _appSetting.RadiusActivityApi + "&keyword=point%20of%20interest&key=" + _appSetting.ApiKey;
                 Task<List<double>> location = _geoCodeGenerator.GetGeoLocation(url);
                 locations = location.Result;
                 geoCode += (locations[0] / locations[2]).ToString() + ",";
@@ -33,7 +32,6 @@ namespace TripAssistantSearchEngineApi
             }
             catch(Exception e)
             {
-                Console.WriteLine(e.Message);
                 geocode = "0,0";
             }
             return geoCode;
@@ -49,7 +47,6 @@ namespace TripAssistantSearchEngineApi
             }
             catch(Exception e)
             {
-                Console.WriteLine(e.Message);
                 geoCode = "0,0";
             }
             return geoCode;

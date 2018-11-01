@@ -12,6 +12,7 @@ namespace TripAssistantSearchEngineApi
 {
     public class Program
     {
+        static IConfiguration config { get; } = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json", false, false).Build();
         public static void Main(string[] args)
         {
             BuildWebHost(args).Run();
@@ -19,6 +20,7 @@ namespace TripAssistantSearchEngineApi
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+            .UseConfiguration(config)
                 .UseStartup<Startup>()
                 .Build();
     }

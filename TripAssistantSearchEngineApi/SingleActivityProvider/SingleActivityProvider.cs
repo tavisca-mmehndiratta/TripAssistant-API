@@ -2,6 +2,7 @@
 using Core.Contracts;
 using System.Collections.Generic;
 using System.Net;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 
@@ -10,10 +11,14 @@ namespace TripAssistantSearchEngineApi
     public class SingleActivityProvider : ISingleActivityProvider
     {
         private readonly ISingleActivityTranslator _singleActivityTranslator;
+        private readonly AppSetting _appSetting;
         UrlBuilderModel builderModel = new UrlBuilderModel();
-        public SingleActivityProvider(ISingleActivityTranslator singleActivityTranslator)
+        private readonly WebClient _webClient;
+        public SingleActivityProvider(IOptions<AppSetting> appSetting,WebClient webClient,ISingleActivityTranslator singleActivityTranslator)
         {
             _singleActivityTranslator = singleActivityTranslator;
+            _webClient = webClient;
+            _appSetting = appSetting.Value;
         }
         public List<Activity> GetListWithSingleAttraction(string location, string activity)
         {
@@ -23,13 +28,13 @@ namespace TripAssistantSearchEngineApi
         public List<Activity> FetchDataFromAllAPIs(string location, string activity)
         {
             List<Activity> finalList = new List<Activity>();
-            string origActivity = activity;
-            activity += " places";
-            activity = activity.Replace(" ", "%20");
-            string url = builderModel.baseUri + location + "&radius=50000&keyword=" + activity + "&key=" + builderModel.apiKey;
-            using (WebClient wc = new WebClient())
+            try
             {
-                var jobject = wc.DownloadString(url);
+                string origActivity = activity;
+                activity += " places";
+                activity = activity.Replace(" ", "%20");
+                string url = _appSetting.GoogleActivityBaseUrl + location + "&radius=" + _appSetting.RadiusSingleThing + "&keyword=" + activity + "&key=" + _appSetting.ApiKey;
+                var jobject = _webClient.DownloadString(url);
                 JObject result = JsonConvert.DeserializeObject<JObject>(jobject);
                 if (result != null)
                 {
@@ -38,27 +43,35 @@ namespace TripAssistantSearchEngineApi
                     activity1.ListActivity = _singleActivityTranslator.GetFilteredActivity(result);
                     finalList.Add(activity1);
                 }
+                return finalList;
             }
-            return finalList;
+            catch(Exception e)
+            {
+                return null;
+            }
         }
         public Activity GetActivityForUserPastExperience(string geocode, string activity)
         {
             Activity finalActivity = new Activity();
-            string origActivity = activity;
-            activity += " places";
-            activity = activity.Replace(" ", "%20");
-            string url = builderModel.baseUri + geocode + "&radius=50000&keyword=" + activity + "&key=" + builderModel.apiKey;
-            using (WebClient wc = new WebClient())
+            try
             {
-                var jobject = wc.DownloadString(url);
+                string origActivity = activity;
+                activity += " places";
+                activity = activity.Replace(" ", "%20");
+                string url = _appSetting.GoogleActivityBaseUrl + geocode + "&radius=" + _appSetting.RadiusSingleThing + "&keyword=" + activity + "&key=" + _appSetting.ApiKey;
+                var jobject = _webClient.DownloadString(url);
                 JObject result = JsonConvert.DeserializeObject<JObject>(jobject);
                 if (result != null)
                 {
                     finalActivity.Type = origActivity;
                     finalActivity.ListActivity = _singleActivityTranslator.GetFilteredActivity(result);
                 }
+                return finalActivity;
             }
-            return finalActivity;
+            catch(Exception e)
+            {
+                return null;
+            }
         }
     }
 }

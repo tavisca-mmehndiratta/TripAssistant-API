@@ -10,13 +10,17 @@ namespace TripAssistantSearchEngineApi
 {
     public class UserDetailsProvider : IUserDetailsProvider
     {
+        private readonly WebClient _webClient;
+        public UserDetailsProvider(WebClient webClient)
+        {
+            _webClient = webClient;
+        }
         public async Task<List<Activities>> GetUsersPreferences(string url)
         {
             List<Activities> userPref = new List<Activities>();
-            StaticUserTypes userPreference = new StaticUserTypes();
-            using (WebClient client = new WebClient())
+            try
             {
-                string jsonPrediction = await client.DownloadStringTaskAsync(url);
+                string jsonPrediction = await _webClient.DownloadStringTaskAsync(url);
                 JObject activityResult = (JObject)JsonConvert.DeserializeObject(jsonPrediction);
                 Activities activities = new Activities
                 {
@@ -101,17 +105,20 @@ namespace TripAssistantSearchEngineApi
                     Type = "zoo",
                     Points = activityResult["zoo"].Value<int>()
                 };
-                userPref.Add(activities);               
+                userPref.Add(activities);
+                return userPref;
             }
-            return userPref;
+            catch(Exception e)
+            {
+                return null;
+            }
         }
         public async Task<List<Activities>> GetUsersPastExperience(string url)
         {
             List<Activities> userPref = new List<Activities>();
-            StaticUserTypes userPreference = new StaticUserTypes();
-            using (WebClient client = new WebClient())
+            try
             {
-                string jsonPrediction = await client.DownloadStringTaskAsync(url);
+                string jsonPrediction = await _webClient.DownloadStringTaskAsync(url);
                 JObject activityResult = (JObject)JsonConvert.DeserializeObject(jsonPrediction);
                 Activities activities = new Activities
                 {
@@ -395,8 +402,12 @@ namespace TripAssistantSearchEngineApi
                     Points = activityResult["zorbing"].Value<int>()
                 };
                 userPref.Add(activities);
+                return userPref;
             }
-            return userPref;
+            catch(Exception e)
+            {
+                return null;
+            }
         }
     }
     

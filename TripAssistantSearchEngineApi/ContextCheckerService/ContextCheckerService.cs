@@ -116,39 +116,46 @@ namespace TripAssistantSearchEngineApi
         public string PerformOperationForIncorrectContext(string[] response)
         {
             string result = "";
-            if (response[response.Length - 1].Equals("send"))
+            try
             {
-                for (int index = 2; index <= 7; index++)
+                if (response[response.Length - 1].Equals("send"))
                 {
-                    result += " " + response[index];
+                    for (int index = 2; index <= 7; index++)
+                    {
+                        result += " " + response[index];
+                    }
                 }
-            }
-            else if (response[response.Length - 1].Equals("trip"))
-            {
-                int index = Array.IndexOf(response, "activity");
-                for (int iterator = index + 1; iterator < response.Length - 1; iterator++)
+                else if (response[response.Length - 1].Equals("trip"))
                 {
-                    result += " " + response[iterator];
+                    int index = Array.IndexOf(response, "activity");
+                    for (int iterator = index + 1; iterator < response.Length - 1; iterator++)
+                    {
+                        result += " " + response[iterator];
+                    }
                 }
-            }
-            else if (response[response.Length - 1].Equals("trips"))
-            {
-                int index = Array.IndexOf(response, "activity");
-                for (int iterator = index + 1; iterator < response.Length - 1; iterator++)
+                else if (response[response.Length - 1].Equals("trips"))
                 {
-                    result += " " + response[iterator];
+                    int index = Array.IndexOf(response, "activity");
+                    for (int iterator = index + 1; iterator < response.Length - 1; iterator++)
+                    {
+                        result += " " + response[iterator];
+                    }
+                    result += " trip";
                 }
-                result += " trip";
+                else if (response[response.Length - 1].Equals("me"))
+                {
+                    result = "true";
+                }
+                else
+                {
+                    result += " I can not process this request!! trip";
+                }
+                return result;
             }
-            else if (response[response.Length - 1].Equals("me"))
+            catch(Exception e)
             {
-                result = "true";
+                return result;
             }
-            else
-            {
-                result += " I can not process this request!! trip";
-            }
-            return result;
         }
     }    
 }

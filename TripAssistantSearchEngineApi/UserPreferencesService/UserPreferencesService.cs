@@ -1,38 +1,49 @@
 ﻿using Core.Contracts;
 using System.Linq;
+using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System;
 
 namespace TripAssistantSearchEngineApi
 {
     public class UserPreferencesService : IUserPreferenceService
     {
         List<Activities> activities = new List<Activities>();
+        private readonly AppSetting _appSetting;
         private readonly IUserDetailsProvider _userDetailsProvider;
         private readonly ISingleActivityProvider _singleActivityProvider;
-        public UserPreferencesService(ISingleActivityProvider singleActivityProvider,IUserDetailsProvider userDetailsProvider)
+        public UserPreferencesService(IOptions<AppSetting> appSetting,ISingleActivityProvider singleActivityProvider,IUserDetailsProvider userDetailsProvider)
         {
             _singleActivityProvider = singleActivityProvider;
             _userDetailsProvider = userDetailsProvider;
+            _appSetting = appSetting.Value;
         }
         public List<Activity> GetFilteredResultsBasedOnUserPreferences(string geoCode, List<Activity> activityList)
         {
             List<Activity> filteredActivityResult = new List<Activity>();
-            string url = "http://tripassistant-user.ap-south-1.elasticbeanstalk.com/api/User?id=Mohit";
-            Task<List<Activities>> prefrences = _userDetailsProvider.GetUsersPreferences(url);
-            activities = prefrences.Result;
-            List<Activities> list =  activities.OrderByDescending(x => x.Points).ToList();
-            foreach(Activities activitie in list)
+            string url = _appSetting.UsersPreferencesBaseUrl;
+            try
             {
-                foreach(Activity activity in activityList)
+                Task<List<Activities>> prefrences = _userDetailsProvider.GetUsersPreferences(url);
+                activities = prefrences.Result;
+                List<Activities> list = activities.OrderByDescending(x => x.Points).ToList();
+                foreach (Activities activitie in list)
                 {
-                    if (activity.Type.Equals(activitie.Type))
+                    foreach (Activity activity in activityList)
                     {
-                        filteredActivityResult.Add(activity);
+                        if (activity.Type.Equals(activitie.Type))
+                        {
+                            filteredActivityResult.Add(activity);
+                        }
                     }
                 }
+                return SortResultsBasedOnPastExperience(geoCode, filteredActivityResult);
             }
-            return SortResultsBasedOnPastExperience(geoCode,filteredActivityResult);
+            catch(Exception e)
+            {
+                return null;
+            }
         }
         public List<Activity> SortResultsBasedOnPastExperience(string geoCode, List<Activity> activityList)
         {
@@ -73,36 +84,43 @@ namespace TripAssistantSearchEngineApi
                 "cable_car"
             };
             List<Activity> filteredActivityResult = new List<Activity>();
-            string url = "http://tripassistant-user.ap-south-1.elasticbeanstalk.com/api/PastExperience?id=Mohit";
-            Task<List<Activities>> prefrences = _userDetailsProvider.GetUsersPastExperience(url);
-            activities = prefrences.Result;
-            List<Activities> list = activities.OrderByDescending(x => x.Points).ToList();
-            foreach (Activities activitie in list)
+            string url = _appSetting.UsersPastExperienceBaseUrl;
+            try
             {
-                int flag = 0;
-                foreach (Activity activity in activityList)
+                Task<List<Activities>> prefrences = _userDetailsProvider.GetUsersPastExperience(url);
+                activities = prefrences.Result;
+                List<Activities> list = activities.OrderByDescending(x => x.Points).ToList();
+                foreach (Activities activitie in list)
                 {
-                    if (activity.Type.Equals(activitie.Type))
+                    int flag = 0;
+                    foreach (Activity activity in activityList)
                     {
-                        flag = 1;
-                        filteredActivityResult.Add(activity);
-                    }
-                }
-                if (flag == 0)
-                {
-                    if (activitie.Points > 0)
-                    {
-                        if (activityStatic.Contains(activitie.Type))
+                        if (activity.Type.Equals(activitie.Type))
                         {
-                            string act = activitie.Type;
-                            act = activitie.Type.Replace("_", " ");
-                            Activity activity = _singleActivityProvider.GetActivityForUserPastExperience(geoCode, act);
+                            flag = 1;
                             filteredActivityResult.Add(activity);
                         }
                     }
+                    if (flag == 0)
+                    {
+                        if (activitie.Points > 0)
+                        {
+                            if (activityStatic.Contains(activitie.Type))
+                            {
+                                string act = activitie.Type;
+                                act = activitie.Type.Replace("_", " ");
+                                Activity activity = _singleActivityProvider.GetActivityForUserPastExperience(geoCode, act);
+                                filteredActivityResult.Add(activity);
+                            }
+                        }
+                    }
                 }
+                return filteredActivityResult;
             }
-            return filteredActivityResult;
+            catch(Exception e)
+            {
+                return null;
+            }
         }
     }
 }

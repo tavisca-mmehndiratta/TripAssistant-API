@@ -52,7 +52,6 @@ namespace TripAssistantSearchEngineApi
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
                 activity = null;
             }
             return activity;

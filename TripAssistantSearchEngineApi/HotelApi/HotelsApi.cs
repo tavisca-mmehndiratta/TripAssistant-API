@@ -1,6 +1,7 @@
 ﻿using Core.Contracts;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -11,11 +12,14 @@ namespace TripAssistantSearchEngineApi
     public class HotelsApi : IHotelApi
     {
         private readonly IHotelTranslator _hotelTranslator;
-
+        private readonly WebClient _webClient;
+        private readonly AppSetting _appSetting;
         UrlBuilderModel urlBuilder = new UrlBuilderModel();
-        public HotelsApi(IHotelTranslator hotelTranslator)
+        public HotelsApi(IOptions<AppSetting> appSetting,WebClient webClient,IHotelTranslator hotelTranslator)
         {
             _hotelTranslator = hotelTranslator;
+            _webClient = webClient;
+            _appSetting = appSetting.Value;
         }
         public async Task<List<Hotel>> GetHotelDetails(string queryString)
         {
@@ -25,17 +29,13 @@ namespace TripAssistantSearchEngineApi
             try
             {
                 data = null;
-                using (var client = new WebClient())
-                {
-                    url = urlBuilder.baseUri + queryString + "&radius=100000&type=hotels&keyword=hotels&key=" + urlBuilder.apiKey;
-                    var jsonPrediction = await client.DownloadStringTaskAsync(url);
-                    data = (JObject)JsonConvert.DeserializeObject(jsonPrediction);
-                    translatedHotelResult = _hotelTranslator.GetFilteredHotel(data);                   
-                }
+                url = _appSetting.GoogleActivityBaseUrl + queryString + "&radius=" + _appSetting.RadiusActivityApi + "&type=hotels&keyword=hotels&key=" + _appSetting.ApiKey;
+                var jsonPrediction = await _webClient.DownloadStringTaskAsync(url);
+                data = (JObject)JsonConvert.DeserializeObject(jsonPrediction);
+                translatedHotelResult = _hotelTranslator.GetFilteredHotel(data);
             }
             catch(Exception e)
             {
-                Console.WriteLine(e.Message);
                 translatedHotelResult = null;
             }
             return translatedHotelResult;

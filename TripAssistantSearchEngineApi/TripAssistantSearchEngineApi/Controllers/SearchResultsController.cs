@@ -26,13 +26,12 @@ namespace TripAssistantSearchEngineApi
         {
             try
             {
-                CoreContract.Response response = new CoreContract.Response();
+                CoreContract.Response response = null;
                 response = _tripResults.FetchResultsFromAPI(input, location);
                 return Ok(_mapper.Map<DataContract.Response>(response));
             }
             catch(Exception e)
             {
-                Console.WriteLine(e.Message);
                 return BadRequest("Exception Occured!!!");
             }
         }

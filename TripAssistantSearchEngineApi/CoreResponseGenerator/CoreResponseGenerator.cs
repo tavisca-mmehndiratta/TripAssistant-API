@@ -11,20 +11,27 @@ namespace TripAssistantSearchEngineApi
         Response coreResponse = new Response();
         public Response MakeResponse(string input,List<Activity> selected,List<Hotel> hotels, List<Activity> activities, string type, string res)
         {
-            if (hotels != null)
+            try
             {
-                coreResponse.HotelList = hotels;
+                if (hotels != null)
+                {
+                    coreResponse.HotelList = hotels;
+                }
+                else
+                {
+                    coreResponse.HotelList = null;
+                }
+                coreResponse.ActivityList = activities;
+                coreResponse.Selected = selected;
+                coreResponse.Request = input;
+                coreResponse.Type = type;
+                coreResponse.ResponseQuery = res;
+                return coreResponse;
             }
-            else
+            catch(Exception e)
             {
-                coreResponse.HotelList = null;
+                return null;
             }
-            coreResponse.ActivityList = activities;
-            coreResponse.Selected = selected;
-            coreResponse.Request = input;
-            coreResponse.Type = type;
-            coreResponse.ResponseQuery = res;
-            return coreResponse;
         }
     }
     

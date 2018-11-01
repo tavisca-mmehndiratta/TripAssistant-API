@@ -32,7 +32,6 @@ namespace TripAssistantSearchEngineApi
             }
             catch(Exception e)
             {
-                Console.WriteLine(e.Message);
                 data = null;
             }
             return data;
@@ -47,7 +46,6 @@ namespace TripAssistantSearchEngineApi
             }
             catch(Exception e)
             {
-                Console.WriteLine(e.Message);
             }
         }      
     }    

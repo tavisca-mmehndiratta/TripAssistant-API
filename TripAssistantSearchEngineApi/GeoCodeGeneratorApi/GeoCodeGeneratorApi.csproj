@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="GoogleMaps.LocationServices" Version="1.2.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="2.1.1" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 

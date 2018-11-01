@@ -103,7 +103,6 @@ namespace TripAssistantSearchEngineApi
                     {
                         geoCode = _geoCode.GetGeoCodeOfCity(attractionBasedSearch.AttractionName);
                         dist = _distanceCalculator.distance(geoCode, currentgeoCode, 'K');
-                        selectApi=(_searchQueryProvider.GetSearchQuery(cityBasedSearch.Duration, dist)).ToString();
                         activityResponse = _singleAttractionProvider.GetListWithSingleAttraction(geoCode, attractionBasedSearch.AttractionName);
                         if(attractionBasedSearch.Duration != 1)
                         {
@@ -129,7 +128,6 @@ namespace TripAssistantSearchEngineApi
             }
             catch(Exception e)
             {
-                Console.WriteLine(e.Message);
                 typeResponse = "request";
                 hotelResponse = null;
                 selected = null;

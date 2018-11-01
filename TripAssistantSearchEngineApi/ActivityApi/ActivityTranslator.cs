@@ -14,7 +14,7 @@ namespace TripAssistantSearchEngineApi
         {
             ActivityDetails activityDetails = new ActivityDetails();
             //TODO: rename.
-            List<string> List = new List<string>();
+            List<string> openingHoursList = new List<string>();
             var results = jObject["result"].Value<JObject>();
             activityDetails.Address = results["formatted_address"].Value<String>();
             activityDetails.Phone = results["international_phone_number"].Value<String>();
@@ -22,12 +22,12 @@ namespace TripAssistantSearchEngineApi
             
             var openingHours = results["opening_hours"].Value<JObject>();
             //TODO: rename.
-            var listArray = openingHours["weekday_text"].Value<JArray>();
-            foreach(string res in listArray)
+            var weekdayArray = openingHours["weekday_text"].Value<JArray>();
+            foreach(string res in weekdayArray)
             {
-                List.Add(res);
+                openingHoursList.Add(res);
             }
-            activityDetails.OpeningHours = List;
+            activityDetails.OpeningHours = openingHoursList;
             return activityDetails;
         }
         public List<ActivityList> GetFilteredActivity(JObject activityjObject)
@@ -71,7 +71,6 @@ namespace TripAssistantSearchEngineApi
             }
             catch(Exception e)
             {
-                Console.WriteLine(e.Message);
                 activity = null;
             }
             return activity;

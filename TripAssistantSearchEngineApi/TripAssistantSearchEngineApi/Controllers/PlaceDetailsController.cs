@@ -19,8 +19,15 @@ namespace TripAssistantSearchEngineApi
         }
         public IActionResult GetPlaceDetails([FromQuery] string placeId)
         {
-            Task<ActivityDetails> activityDetails = _activityApi.GetActivitiesByPlaceId(placeId);
-            return Ok(activityDetails.Result);
+            try
+            {
+                Task<ActivityDetails> activityDetails = _activityApi.GetActivitiesByPlaceId(placeId);
+                return Ok(activityDetails.Result);
+            }
+            catch(Exception e)
+            {
+                return BadRequest("");
+            }
         }
     }
 }

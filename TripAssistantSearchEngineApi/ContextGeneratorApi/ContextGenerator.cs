@@ -1,6 +1,7 @@
 ﻿using ApiAiSDK;
 using System;
 using Core.Contracts;
+using Microsoft.Extensions.Options;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -9,11 +10,16 @@ namespace TripAssistantSearchEngineApi
     public class ContextGenerator: IContextGenerator
     {
         static private ApiAi _apiAi;
+        private readonly AppSetting _appSetting;
+        public ContextGenerator(IOptions<AppSetting> appSetting)
+        {
+            _appSetting = appSetting.Value;
+        }
         public string GetContextResponse(string contextInput)
         {
             try
             {
-                var config = new AIConfiguration("ada088ff76ae462fb2a17e5ee0df4c9b", SupportedLanguage.English);
+                var config = new AIConfiguration(_appSetting.ApiAiConfigurationKey, SupportedLanguage.English);
                 _apiAi = new ApiAi(config);
                 var response = _apiAi.TextRequest(contextInput);
                 string context = response.Result.Fulfillment.Speech;
@@ -21,7 +27,6 @@ namespace TripAssistantSearchEngineApi
             }
             catch(Exception e)
             {
-                Console.WriteLine(e.Message);
                 return "Exception occured!";
             }
         }

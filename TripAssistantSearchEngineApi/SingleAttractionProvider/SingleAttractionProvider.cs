@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Core.Contracts;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Options;
 using System.Net;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
@@ -10,11 +11,15 @@ namespace TripAssistantSearchEngineApi
 {
     public class SingleAttractionProvider : ISingleAttractionProvider
     {
+        private readonly WebClient _webClient;
+        private readonly AppSetting _appSetting;
         private readonly ISingleAttractionTranslator _singleAttractionTranslator;
         UrlBuilderModel builderModel = new UrlBuilderModel();
-        public SingleAttractionProvider(ISingleAttractionTranslator singleAttractionTranslator)
+        public SingleAttractionProvider(IOptions<AppSetting> appSetting,WebClient webClient,ISingleAttractionTranslator singleAttractionTranslator)
         {
             _singleAttractionTranslator = singleAttractionTranslator;
+            _webClient = webClient;
+            _appSetting = appSetting.Value;
         }
         public List<Activity> GetListWithSingleAttraction(string location, string attraction)
         {
@@ -27,24 +32,30 @@ namespace TripAssistantSearchEngineApi
             attraction = attraction.Replace(" ", "%20");
             Task<List<Activity>> totalResponse = FetchSerializedData(location,attraction);
             while (totalResponse.Result.Count != 4) ;
-            string url = builderModel.baseUri + location + "&radius=100&keyword=" + attraction + "&key=" + builderModel.apiKey;
-            using (WebClient wc = new WebClient())
+            try
             {
-                var jobject = wc.DownloadString(url);
+                string url = _appSetting.GoogleActivityBaseUrl + location + "&radius=100&keyword=" + attraction + "&key=" + _appSetting.ApiKey;
+                var jobject = _webClient.DownloadString(url);
                 JObject result = JsonConvert.DeserializeObject<JObject>(jobject);
-               if (result != null)
-               {
-                   Activity activity = new Activity();
-                   activity.Type = attraction.Replace("%20", " ");
-                   activity.ListActivity = _singleAttractionTranslator.GetFilteredActivity(result);
-                   finalList.Add(activity);
-               }
+                if (result != null)
+                {
+                    Activity activity = new Activity
+                    {
+                        Type = attraction.Replace("%20", " "),
+                        ListActivity = _singleAttractionTranslator.GetFilteredActivity(result)
+                    };
+                    finalList.Add(activity);
+                }
+                for (int i = 0; i < totalResponse.Result.Count; i++)
+                {
+                    finalList.Add(totalResponse.Result[i]);
+                }
+                return finalList;
             }
-            for(int i = 0; i < totalResponse.Result.Count; i++)
+            catch(Exception e)
             {
-                finalList.Add(totalResponse.Result[i]);
+                return null;
             }
-            return finalList;
         }
         //Calling multiple apis parallely 
         private async Task<List<Activity>> FetchSerializedData(string location,string attraction)
@@ -59,86 +70,62 @@ namespace TripAssistantSearchEngineApi
                         (new ParallelOptions() { MaxDegreeOfParallelism = 1 },
                             () =>
                             {
-                                url = builderModel.baseUri + location + "&radius=18000&keyword=amusement%20parks&key=" + builderModel.apiKey;
-                                using (WebClient wc = new WebClient())
+                                url = _appSetting.GoogleActivityBaseUrl + location + "&radius=" + _appSetting.RadiusSingleAttraction + "&keyword=amusement%20parks&key=" + _appSetting.ApiKey;
+                                string serializedResult = _webClient.DownloadString(url);
+                                JObject result = JsonConvert.DeserializeObject<JObject>(serializedResult);
+                                if (result != null)
                                 {
-                                    wc.DownloadStringTaskAsync(new Uri(url));
-                                    wc.DownloadStringCompleted += (sender, e) =>
+                                    Activity activity = new Activity
                                     {
-                                        JObject result = JsonConvert.DeserializeObject<JObject>(e.Result);
-                                        if (result != null)
-                                        {
-                                            Activity activity = new Activity
-                                            {
-                                                Type = "amusement_park",
-                                                ListActivity = _singleAttractionTranslator.GetFilteredActivity(result)
-                                            };
-                                            searlizedResponse.Add(activity);
-                                        }
+                                        Type = "amusement_park",
+                                        ListActivity = _singleAttractionTranslator.GetFilteredActivity(result)
                                     };
+                                    searlizedResponse.Add(activity);
                                 }
                             },
                             () =>
                             {
-                                url = builderModel.baseUri + location + "&radius=18000&keyword=museum&key=" + builderModel.apiKey;
-                                using (WebClient wc = new WebClient())
+                                url = _appSetting.GoogleActivityBaseUrl + location + "&radius=" + _appSetting.RadiusSingleAttraction + "&keyword=museum&key=" + _appSetting.ApiKey;
+                                string serializedResult = _webClient.DownloadString(url);
+                                JObject result = JsonConvert.DeserializeObject<JObject>(serializedResult);
+                                if (result != null)
                                 {
-                                    wc.DownloadStringTaskAsync(new Uri(url));
-                                    wc.DownloadStringCompleted += (sender, e) =>
+                                    Activity activity = new Activity
                                     {
-                                        JObject result = JsonConvert.DeserializeObject<JObject>(e.Result);
-                                        if (result != null)
-                                        {
-                                            Activity activity = new Activity
-                                            {
-                                                Type = "museum",
-                                                ListActivity = _singleAttractionTranslator.GetFilteredActivity(result)
-                                            };
-                                            searlizedResponse.Add(activity);
-                                        }
+                                        Type = "museum",
+                                        ListActivity = _singleAttractionTranslator.GetFilteredActivity(result)
                                     };
+                                    searlizedResponse.Add(activity);
                                 }
                             },
                             () =>
                             {
-                                url = builderModel.baseUri + location + "&radius=18000&keyword=activity&key=" + builderModel.apiKey;
-                                using (WebClient wc = new WebClient())
+                                url = _appSetting.GoogleActivityBaseUrl + location + "&radius=" + _appSetting.RadiusSingleAttraction + "&keyword=things%20to%20do&key=" + _appSetting.ApiKey;
+                                string serializedResult = _webClient.DownloadString(url);
+                                JObject result = JsonConvert.DeserializeObject<JObject>(serializedResult);
+                                if (result != null)
                                 {
-                                    wc.DownloadStringTaskAsync(new Uri(url));
-                                    wc.DownloadStringCompleted += (sender, e) =>
+                                    Activity activity = new Activity
                                     {
-                                        JObject result = JsonConvert.DeserializeObject<JObject>(e.Result);
-                                        if (result != null)
-                                        {
-                                            Core.Contracts.Activity activity = new Core.Contracts.Activity
-                                            {
-                                                Type = "activity",
-                                                ListActivity = _singleAttractionTranslator.GetFilteredActivity(result)
-                                            };
-                                            searlizedResponse.Add(activity);
-                                        }
+                                        Type = "activity",
+                                        ListActivity = _singleAttractionTranslator.GetFilteredActivity(result)
                                     };
+                                    searlizedResponse.Add(activity);
                                 }
                             },
                             () =>
                             {
-                                url = builderModel.baseUri + location + "&radius=18000&keyword=art%20gallery&key=" + builderModel.apiKey;
-                                using (WebClient wc = new WebClient())
+                                url = _appSetting.GoogleActivityBaseUrl + location + "&radius=" + _appSetting.RadiusSingleAttraction + "&keyword=art%20gallery&key=" + _appSetting.ApiKey;
+                                string serializedResult = _webClient.DownloadString(url);
+                                JObject result = JsonConvert.DeserializeObject<JObject>(serializedResult);
+                                if (result != null)
                                 {
-                                    wc.DownloadStringTaskAsync(new Uri(url));
-                                    wc.DownloadStringCompleted += (sender, e) =>
+                                    Activity activity = new Activity
                                     {
-                                        JObject result = JsonConvert.DeserializeObject<JObject>(e.Result);
-                                        if (result != null)
-                                        {
-                                            Core.Contracts.Activity activity = new Core.Contracts.Activity
-                                            {
-                                                Type = "art_gallery",
-                                                ListActivity = _singleAttractionTranslator.GetFilteredActivity(result)
-                                            };
-                                            searlizedResponse.Add(activity);
-                                        }
+                                        Type = "art_gallery",
+                                        ListActivity = _singleAttractionTranslator.GetFilteredActivity(result)
                                     };
+                                    searlizedResponse.Add(activity);
                                 }
                             });
 
@@ -146,7 +133,6 @@ namespace TripAssistantSearchEngineApi
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
                 searlizedResponse = null;
             }
             return searlizedResponse;

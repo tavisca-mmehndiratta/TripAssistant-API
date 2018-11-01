@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "916f2ab9ebea6047b1644f34962170e5e47b82b5"
+    "signature": "e93f16f0fc71eb2a7e7ffc5d65c08ddecad6231a"
   },
   "compilationOptions": {},
   "targets": {
@@ -37,6 +37,38 @@
           "lib/net40/GoogleMaps.LocationServices.dll": {
             "assemblyVersion": "0.1.6329.16944",
             "fileVersion": "0.9.0.0"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/2.1.1": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.18157"
+          }
+        }
+      },
+      "Microsoft.Extensions.Options/2.1.1": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.1.1",
+          "Microsoft.Extensions.Primitives": "2.1.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Options.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.18157"
+          }
+        }
+      },
+      "Microsoft.Extensions.Primitives/2.1.1": {
+        "dependencies": {
+          "System.Memory": "4.5.1",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.18157"
           }
         }
       },
@@ -252,6 +284,17 @@
           "System.Runtime.Extensions": "4.1.0"
         }
       },
+      "System.Memory/4.5.1": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Memory.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.6.26606.5"
+          }
+        }
+      },
       "System.Net.NameResolution/4.0.0": {
         "dependencies": {
           "System.Collections": "4.0.11",
@@ -391,6 +434,14 @@
       "System.Runtime/4.1.0": {
         "dependencies": {
           "Microsoft.NETCore.Targets": "1.0.1"
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.5.1": {
+        "runtime": {
+          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "assemblyVersion": "4.0.4.0",
+            "fileVersion": "0.0.0.0"
+          }
         }
       },
       "System.Runtime.Extensions/4.1.0": {
@@ -706,6 +757,7 @@
       "ActivityApiProvider/1.0.0": {
         "dependencies": {
           "CoreContract": "1.0.0",
+          "Microsoft.Extensions.Options": "2.1.1",
           "Newtonsoft.Json": "11.0.2",
           "RedisDataProvider": "1.0.0"
         },
@@ -725,6 +777,7 @@
         "dependencies": {
           "ApiAiSDK": "1.6.5",
           "CoreContract": "1.0.0",
+          "Microsoft.Extensions.Options": "2.1.1",
           "Newtonsoft.Json": "11.0.2"
         },
         "runtime": {
@@ -749,7 +802,8 @@
       },
       "GeoCode/1.0.0": {
         "dependencies": {
-          "GeoCodeGeneratorApi": "1.0.0"
+          "GeoCodeGeneratorApi": "1.0.0",
+          "Microsoft.Extensions.Options": "2.1.1"
         },
         "runtime": {
           "GeoCode.dll": {}
@@ -759,6 +813,7 @@
         "dependencies": {
           "CoreContract": "1.0.0",
           "GoogleMaps.LocationServices": "1.2.0.1",
+          "Microsoft.Extensions.Options": "2.1.1",
           "Newtonsoft.Json": "11.0.2"
         },
         "runtime": {
@@ -768,6 +823,7 @@
       "HotelApiProvider/1.0.0": {
         "dependencies": {
           "CoreContract": "1.0.0",
+          "Microsoft.Extensions.Options": "2.1.1",
           "Newtonsoft.Json": "11.0.2",
           "RedisDataProvider": "1.0.0"
         },
@@ -787,7 +843,8 @@
       },
       "SingleActivityProvider/1.0.0": {
         "dependencies": {
-          "CoreContract": "1.0.0"
+          "CoreContract": "1.0.0",
+          "Microsoft.Extensions.Options": "2.1.1"
         },
         "runtime": {
           "SingleActivityProvider.dll": {}
@@ -804,6 +861,7 @@
       "UserPreferencesService/1.0.0": {
         "dependencies": {
           "CoreContract": "1.0.0",
+          "Microsoft.Extensions.Options": "2.1.1",
           "SingleActivityProvider": "1.0.0",
           "UserDetailsProvider": "1.0.0"
         },
@@ -832,6 +890,27 @@
       "sha512": "sha512-Yh4Ur1v5AVUrWGrEmEoL1wGzvyPtImePm+4D93Fc4gOzjhl1opMVqupsrvQMElXh88ItjHon0nDGJkcx1gcxjg==",
       "path": "googlemaps.locationservices/1.2.0.1",
       "hashPath": "googlemaps.locationservices.1.2.0.1.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PW1596sF97gpIc1JuUuYvTmeLfeqC5whbWPsWgJhN0fdwz683him3b/HB0dqhFesVssOjnnA0fEz4+S0gUeBqA==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/2.1.1",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.2.1.1.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Options/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-j0zOfTt1Qm+JDW2m+6Q/aj1m4C8+onudUu4ls/fN69VxruZkMWmX1bPKkbkYIPNNxJsf4k7FOkVq5o1vEFq9pQ==",
+      "path": "microsoft.extensions.options/2.1.1",
+      "hashPath": "microsoft.extensions.options.2.1.1.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Primitives/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Svz25/egj1TsNL4118jyMqkhDiu0l8QYWq2p52P4BBN0GbqwR18ZRIctSP5TTDJy0m0EFC8aB2FOVjGtvEGWSA==",
+      "path": "microsoft.extensions.primitives/2.1.1",
+      "hashPath": "microsoft.extensions.primitives.2.1.1.nupkg.sha512"
     },
     "Microsoft.NETCore.Targets/1.0.1": {
       "type": "package",
@@ -994,6 +1073,13 @@
       "path": "system.linq/4.1.0",
       "hashPath": "system.linq.4.1.0.nupkg.sha512"
     },
+    "System.Memory/4.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vcG3/MbfpxznMkkkaAblJi7RHOmuP7kawQMhDgLSuA1tRpRQYsFSCTxRSINDUgn2QNn2jWeLxv8er5BXbyACkw==",
+      "path": "system.memory/4.5.1",
+      "hashPath": "system.memory.4.5.1.nupkg.sha512"
+    },
     "System.Net.NameResolution/4.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1077,6 +1163,13 @@
       "sha512": "sha512-v6c/4Yaa9uWsq+JMhnOFewrYkgdNHNG2eMKuNqRn8P733rNXeRCGvV5FkkjBXn2dbVkPXOsO0xjsEeM1q2zC0g==",
       "path": "system.runtime/4.1.0",
       "hashPath": "system.runtime.4.1.0.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/4.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qUJMNWhbm9oZ3XaMFiEMiYmRPszbnXIkRIi7+4b2Md2xZ6JUOepf0/kY3S85qistRohl9OdMe4PsO+RdG2kTIQ==",
+      "path": "system.runtime.compilerservices.unsafe/4.5.1",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512"
     },
     "System.Runtime.Extensions/4.1.0": {
       "type": "package",

@@ -12,6 +12,8 @@ using Core.Contracts;
 using Microsoft.Extensions.Options;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Http;
+using System.Net;
 
 namespace TripAssistantSearchEngineApi
 {
@@ -27,6 +29,7 @@ namespace TripAssistantSearchEngineApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<AppSetting>(Configuration.GetSection("Appsettings"));
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {
                 builder.AllowAnyOrigin()
@@ -65,7 +68,8 @@ namespace TripAssistantSearchEngineApi
             services.AddTransient<ICoreResponseGenerator,CoreResponseGenerator>();
             services.AddTransient<ISearchQueryProvider, SearchQueryProvider>();
             services.AddTransient<IDistanceCalculator, DistanceCalculator>();
-
+            WebClient webClient = new WebClient();
+            services.AddSingleton<WebClient>(webClient);
             services.AddAutoMapper(x => x.AddProfile(new AutoMapperInitializer()));
         }
 

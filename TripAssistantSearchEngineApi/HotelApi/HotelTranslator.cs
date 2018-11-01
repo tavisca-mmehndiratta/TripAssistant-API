@@ -41,7 +41,6 @@ namespace TripAssistantSearchEngineApi
             }
             catch(Exception e)
             {
-                Console.WriteLine(e.Message);
                 hotel = null;
             }
             return hotel;
