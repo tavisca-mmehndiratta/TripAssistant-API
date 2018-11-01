@@ -21,8 +21,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ApiSearchQueryProvider\ApiSearchQueryProvider.csproj" />
     <ProjectReference Include="..\CoreContract\CoreContract.csproj" />
     <ProjectReference Include="..\DataContract\DataContract.csproj" />
+    <ProjectReference Include="..\DistanceCalculationService\DistanceCalculationService.csproj" />
     <ProjectReference Include="..\SingleActivityProvider\SingleActivityProvider.csproj" />
     <ProjectReference Include="..\SingleAttractionProvider\SingleAttractionProvider.csproj" />
     <ProjectReference Include="..\TrainingDataLogger\TrainingDataLogger.csproj" />

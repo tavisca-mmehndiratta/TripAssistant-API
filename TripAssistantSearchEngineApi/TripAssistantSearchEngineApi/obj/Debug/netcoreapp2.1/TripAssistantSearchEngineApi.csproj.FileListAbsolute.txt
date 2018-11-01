@@ -43,3 +43,7 @@ C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\Tr
 C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\TripAssistantSearchEngineApi\obj\Debug\netcoreapp2.1\TripAssistantSearchEngineApi.AssemblyInfo.cs
 C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\TripAssistantSearchEngineApi\obj\Debug\netcoreapp2.1\TripAssistantSearchEngineApi.dll
 C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\TripAssistantSearchEngineApi\obj\Debug\netcoreapp2.1\TripAssistantSearchEngineApi.pdb
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\TripAssistantSearchEngineApi\bin\Debug\netcoreapp2.1\ApiSearchQueryProvider.dll
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\TripAssistantSearchEngineApi\bin\Debug\netcoreapp2.1\DistanceCalculationService.dll
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\TripAssistantSearchEngineApi\bin\Debug\netcoreapp2.1\ApiSearchQueryProvider.pdb
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\TripAssistantSearchEngineApi\bin\Debug\netcoreapp2.1\DistanceCalculationService.pdb

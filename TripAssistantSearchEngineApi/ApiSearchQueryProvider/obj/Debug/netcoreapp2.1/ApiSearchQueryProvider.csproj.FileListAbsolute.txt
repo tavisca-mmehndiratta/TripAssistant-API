@@ -1,0 +1,11 @@
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\ApiSearchQueryProvider\bin\Debug\netcoreapp2.1\ApiSearchQueryProvider.deps.json
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\ApiSearchQueryProvider\bin\Debug\netcoreapp2.1\ApiSearchQueryProvider.dll
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\ApiSearchQueryProvider\bin\Debug\netcoreapp2.1\ApiSearchQueryProvider.pdb
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\ApiSearchQueryProvider\bin\Debug\netcoreapp2.1\CoreContract.dll
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\ApiSearchQueryProvider\bin\Debug\netcoreapp2.1\CoreContract.pdb
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\ApiSearchQueryProvider\obj\Debug\netcoreapp2.1\ApiSearchQueryProvider.csprojResolveAssemblyReference.cache
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\ApiSearchQueryProvider\obj\Debug\netcoreapp2.1\ApiSearchQueryProvider.csproj.CoreCompileInputs.cache
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\ApiSearchQueryProvider\obj\Debug\netcoreapp2.1\ApiSearchQueryProvider.AssemblyInfoInputs.cache
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\ApiSearchQueryProvider\obj\Debug\netcoreapp2.1\ApiSearchQueryProvider.AssemblyInfo.cs
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\ApiSearchQueryProvider\obj\Debug\netcoreapp2.1\ApiSearchQueryProvider.dll
+C:\Users\mmehndiratta\Downloads\Trip-Assisatant-master\Trip-Assisatant-master\TripAssistantSearchEngineApi\ApiSearchQueryProvider\obj\Debug\netcoreapp2.1\ApiSearchQueryProvider.pdb

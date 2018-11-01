@@ -62,7 +62,10 @@ namespace TripAssistantSearchEngineApi
             services.AddTransient<IActivityCache, ActivityCache>();
             services.AddTransient<ITrainingDataLogger, TrainingDataLogger>();
             services.AddTransient<IHotelCache, HotelCache>();
-            services.AddTransient<ICoreResponseGenerator, CoreResponseGenerator>();
+            services.AddTransient<ICoreResponseGenerator,CoreResponseGenerator>();
+            services.AddTransient<ISearchQueryProvider, SearchQueryProvider>();
+            services.AddTransient<IDistanceCalculator, DistanceCalculator>();
+
             services.AddAutoMapper(x => x.AddProfile(new AutoMapperInitializer()));
         }
 

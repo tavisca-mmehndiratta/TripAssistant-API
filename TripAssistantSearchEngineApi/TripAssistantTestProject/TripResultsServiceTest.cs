@@ -15,6 +15,8 @@ namespace TripAssistantSearchEngineApi
         static ISingleActivityTranslator singleActivityTranslator = new SingleActivityTranslator();
         static ISingleAttractionTranslator singleAttractionTranslator = new SingleAttractionTranslator();
         static IHotelTranslator hotelTranslator = new HotelTranslator();
+        static private readonly IDistanceCalculator _distanceCalculator = new DistanceCalculator();
+        static private readonly ISearchQueryProvider _searchQueryProvider = new SearchQueryProvider();
         static private readonly ISingleActivityProvider _singleActivityProvider = new SingleActivityProvider(singleActivityTranslator);
         static private readonly IGeoCodeGenerator geoCodeGenerator = new GeoCodeGenerator();
         static private readonly IGeoCode _geoCode = new GeoCode(geoCodeGenerator);
@@ -26,7 +28,7 @@ namespace TripAssistantSearchEngineApi
         static private readonly ICoreResponseGenerator _coreResponseGenerator = new CoreResponseGenerator();
         static private readonly IHotelApi _hotelApi = new HotelsApi(hotelTranslator);
         static private readonly IContextCheckerService _contextChecker = new ContextCheckerService(contextGenerator);
-        static IContextAnalyzerService _contextAnalyzerService = new ContextAnalyzerService(_singleActivityProvider, _singleAttractionProvider, _hotelCache, _activityCache, _userPreferenceService, _coreResponseGenerator, _activityApi, _geoCode, _contextChecker, _hotelApi);
+        static IContextAnalyzerService _contextAnalyzerService = new ContextAnalyzerService(_singleActivityProvider, _singleAttractionProvider, _hotelCache, _activityCache, _userPreferenceService, _distanceCalculator, _coreResponseGenerator, _activityApi, _geoCode, _contextChecker, _hotelApi, _searchQueryProvider);
         private ITripResultsService _tripResultsService = new TripResultsService(_contextAnalyzerService,trainingDataLogger);
 
         [Fact]
@@ -35,8 +37,8 @@ namespace TripAssistantSearchEngineApi
             Response responseOutput = _tripResultsService.FetchResultsFromAPI("Hello", "pune");
             Assert.Null(responseOutput.ActivityList);
             Assert.Null(responseOutput.HotelList);
+            Assert.Null(responseOutput.Selected);
             Assert.Equal("", responseOutput.Request);
-            Assert.Equal("none", responseOutput.Selected);
             Assert.Equal("Namaste, How can i help you? ", responseOutput.ResponseQuery);
             Assert.Equal("request", responseOutput.Type);
         }

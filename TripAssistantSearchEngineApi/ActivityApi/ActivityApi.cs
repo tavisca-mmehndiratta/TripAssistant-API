@@ -33,6 +33,7 @@ namespace TripAssistantSearchEngineApi
                 string url = builderModel.baseUriPlaceId + placeId + "&key=" + builderModel.apiKey;
                 using (WebClient client = new WebClient())
                 {
+                    //TODO: change name of the variable
                     string jsonPrediction = await client.DownloadStringTaskAsync(url);
                     activityResult = (JObject)JsonConvert.DeserializeObject(jsonPrediction);
                     activityDetails = _activityTranslator.GetFilteredPlace(activityResult);
@@ -42,7 +43,6 @@ namespace TripAssistantSearchEngineApi
             {
                 Console.WriteLine(e.Message);
                 activityResult = null;
-
             }
             return activityDetails;
         }

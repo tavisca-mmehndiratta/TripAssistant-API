@@ -24,9 +24,11 @@
     ".NETCoreApp,Version=v2.1": {
       "TripAssistantSearchEngineApi/1.0.0": {
         "dependencies": {
+          "ApiSearchQueryProvider": "1.0.0",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "5.0.1",
           "CoreContract": "1.0.0",
           "DataContract": "1.0.0",
+          "DistanceCalculationService": "1.0.0",
           "Microsoft.AspNetCore.All": "2.0.9",
           "Microsoft.NETCore.App": "2.1.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.3",
@@ -4679,6 +4681,17 @@
           "ActivityApiProvider.dll": {}
         }
       },
+      "ApiSearchQueryProvider/1.0.0": {
+        "dependencies": {
+          "CoreContract": "1.0.0"
+        },
+        "runtime": {
+          "ApiSearchQueryProvider.dll": {}
+        },
+        "compile": {
+          "ApiSearchQueryProvider.dll": {}
+        }
+      },
       "ContextAnalyzerService/1.0.0": {
         "dependencies": {
           "ActivityApiProvider": "1.0.0",
@@ -4752,6 +4765,17 @@
         },
         "compile": {
           "DataContract.dll": {}
+        }
+      },
+      "DistanceCalculationService/1.0.0": {
+        "dependencies": {
+          "CoreContract": "1.0.0"
+        },
+        "runtime": {
+          "DistanceCalculationService.dll": {}
+        },
+        "compile": {
+          "DistanceCalculationService.dll": {}
         }
       },
       "GeoCode/1.0.0": {
@@ -7204,6 +7228,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "ApiSearchQueryProvider/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "ContextAnalyzerService/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -7230,6 +7259,11 @@
       "sha512": ""
     },
     "DataContract/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DistanceCalculationService/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

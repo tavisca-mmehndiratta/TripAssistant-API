@@ -5042,6 +5042,19 @@
           "bin/placeholder/ActivityApiProvider.dll": {}
         }
       },
+      "ApiSearchQueryProvider/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "CoreContract": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ApiSearchQueryProvider.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ApiSearchQueryProvider.dll": {}
+        }
+      },
       "ContextAnalyzerService/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
@@ -5127,6 +5140,19 @@
         },
         "runtime": {
           "bin/placeholder/DataContract.dll": {}
+        }
+      },
+      "DistanceCalculationService/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "CoreContract": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DistanceCalculationService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DistanceCalculationService.dll": {}
         }
       },
       "GeoCode/1.0.0": {
@@ -13409,6 +13435,11 @@
       "path": "../ActivityApi/ActivityApiProvider.csproj",
       "msbuildProject": "../ActivityApi/ActivityApiProvider.csproj"
     },
+    "ApiSearchQueryProvider/1.0.0": {
+      "type": "project",
+      "path": "../ApiSearchQueryProvider/ApiSearchQueryProvider.csproj",
+      "msbuildProject": "../ApiSearchQueryProvider/ApiSearchQueryProvider.csproj"
+    },
     "ContextAnalyzerService/1.0.0": {
       "type": "project",
       "path": "../ContextAnalyzerService/ContextAnalyzerService.csproj",
@@ -13438,6 +13469,11 @@
       "type": "project",
       "path": "../DataContract/DataContract.csproj",
       "msbuildProject": "../DataContract/DataContract.csproj"
+    },
+    "DistanceCalculationService/1.0.0": {
+      "type": "project",
+      "path": "../DistanceCalculationService/DistanceCalculationService.csproj",
+      "msbuildProject": "../DistanceCalculationService/DistanceCalculationService.csproj"
     },
     "GeoCode/1.0.0": {
       "type": "project",
@@ -13492,9 +13528,11 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "ApiSearchQueryProvider >= 1.0.0",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 5.0.1",
       "CoreContract >= 1.0.0",
       "DataContract >= 1.0.0",
+      "DistanceCalculationService >= 1.0.0",
       "Microsoft.AspNetCore.All >= 2.0.9",
       "Microsoft.NETCore.App >= 2.1.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.3",
@@ -13541,6 +13579,12 @@
           "projectReferences": {
             "C:\\Users\\mmehndiratta\\Downloads\\Trip-Assisatant-master\\Trip-Assisatant-master\\TripAssistantSearchEngineApi\\TrainingDataLogger\\TrainingDataLogger.csproj": {
               "projectPath": "C:\\Users\\mmehndiratta\\Downloads\\Trip-Assisatant-master\\Trip-Assisatant-master\\TripAssistantSearchEngineApi\\TrainingDataLogger\\TrainingDataLogger.csproj"
+            },
+            "C:\\Users\\mmehndiratta\\Downloads\\Trip-Assisatant-master\\Trip-Assisatant-master\\TripAssistantSearchEngineApi\\ApiSearchQueryProvider\\ApiSearchQueryProvider.csproj": {
+              "projectPath": "C:\\Users\\mmehndiratta\\Downloads\\Trip-Assisatant-master\\Trip-Assisatant-master\\TripAssistantSearchEngineApi\\ApiSearchQueryProvider\\ApiSearchQueryProvider.csproj"
+            },
+            "C:\\Users\\mmehndiratta\\Downloads\\Trip-Assisatant-master\\Trip-Assisatant-master\\TripAssistantSearchEngineApi\\DistanceCalculationService\\DistanceCalculationService.csproj": {
+              "projectPath": "C:\\Users\\mmehndiratta\\Downloads\\Trip-Assisatant-master\\Trip-Assisatant-master\\TripAssistantSearchEngineApi\\DistanceCalculationService\\DistanceCalculationService.csproj"
             },
             "C:\\Users\\mmehndiratta\\Downloads\\Trip-Assisatant-master\\Trip-Assisatant-master\\TripAssistantSearchEngineApi\\DataContract\\DataContract.csproj": {
               "projectPath": "C:\\Users\\mmehndiratta\\Downloads\\Trip-Assisatant-master\\Trip-Assisatant-master\\TripAssistantSearchEngineApi\\DataContract\\DataContract.csproj"

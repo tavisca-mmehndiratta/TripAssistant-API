@@ -7,23 +7,27 @@ namespace TripAssistantSearchEngineApi
 {
     public class ActivityTranslator : IActivityTranslator
     {
-        readonly string url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=";
+        
+        private readonly string _url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=";
 
         public ActivityDetails GetFilteredPlace(JObject jObject)
         {
             ActivityDetails activityDetails = new ActivityDetails();
+            //TODO: rename.
+            List<string> List = new List<string>();
             var results = jObject["result"].Value<JObject>();
             activityDetails.Address = results["formatted_address"].Value<String>();
             activityDetails.Phone = results["international_phone_number"].Value<String>();
             activityDetails.Website = results["website"].Value<String>();
-            List<string> list = new List<string>();
+            
             var openingHours = results["opening_hours"].Value<JObject>();
+            //TODO: rename.
             var listArray = openingHours["weekday_text"].Value<JArray>();
             foreach(string res in listArray)
             {
-                list.Add(res);
+                List.Add(res);
             }
-            activityDetails.OpeningHours = list;
+            activityDetails.OpeningHours = List;
             return activityDetails;
         }
         public List<ActivityList> GetFilteredActivity(JObject activityjObject)
@@ -61,7 +65,7 @@ namespace TripAssistantSearchEngineApi
                 {
                     JArray photoArray = res["photos"].Value<JArray>();
                     photo = photoArray[0].Value<JObject>();
-                    activity.PhotoUrl = url + photo["photo_reference"].Value<String>() + "&key=AIzaSyD2bL_pYSzue4JkSDQg4fYSuVT8XA_bjCQ";
+                    activity.PhotoUrl = _url + photo["photo_reference"].Value<String>() + "&key=AIzaSyD2bL_pYSzue4JkSDQg4fYSuVT8XA_bjCQ";
                 }
                 activity.PlaceId = placeId;
             }

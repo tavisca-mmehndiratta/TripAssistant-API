@@ -43,7 +43,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingleAttractionProvider", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingleActivityProvider", "SingleActivityProvider\SingleActivityProvider.csproj", "{06A9B86F-7D3D-4E37-9CDA-02E92C77A186}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripAssistantTestProject", "TripAssistantTestProject\TripAssistantTestProject.csproj", "{5923AD94-7D38-4F8B-AA06-F3A1BA97E4C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TripAssistantTestProject", "TripAssistantTestProject\TripAssistantTestProject.csproj", "{5923AD94-7D38-4F8B-AA06-F3A1BA97E4C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiSearchQueryProvider", "ApiSearchQueryProvider\ApiSearchQueryProvider.csproj", "{C6DB4F9B-2C76-4239-8756-9F0789E00400}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistanceCalculationService", "DistanceCalculationService\DistanceCalculationService.csproj", "{AE810971-C622-43A9-845A-A66A04640440}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -127,6 +131,14 @@ Global
 		{5923AD94-7D38-4F8B-AA06-F3A1BA97E4C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5923AD94-7D38-4F8B-AA06-F3A1BA97E4C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5923AD94-7D38-4F8B-AA06-F3A1BA97E4C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6DB4F9B-2C76-4239-8756-9F0789E00400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6DB4F9B-2C76-4239-8756-9F0789E00400}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6DB4F9B-2C76-4239-8756-9F0789E00400}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6DB4F9B-2C76-4239-8756-9F0789E00400}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE810971-C622-43A9-845A-A66A04640440}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE810971-C622-43A9-845A-A66A04640440}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE810971-C622-43A9-845A-A66A04640440}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE810971-C622-43A9-845A-A66A04640440}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -147,6 +159,8 @@ Global
 		{878096CD-5DC7-4495-962A-80AB98563F92} = {0C9EDAB9-C71C-46AF-9D6D-A4569C6AA39C}
 		{8F6ED638-4BD9-4BF5-B10E-45E377F8396A} = {0C9EDAB9-C71C-46AF-9D6D-A4569C6AA39C}
 		{06A9B86F-7D3D-4E37-9CDA-02E92C77A186} = {0C9EDAB9-C71C-46AF-9D6D-A4569C6AA39C}
+		{C6DB4F9B-2C76-4239-8756-9F0789E00400} = {0C9EDAB9-C71C-46AF-9D6D-A4569C6AA39C}
+		{AE810971-C622-43A9-845A-A66A04640440} = {7F9BDDDA-2600-45C9-B469-6EF33DC46FA7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D4930BE6-0EB2-4900-B15C-FC49DB4B4BAF}

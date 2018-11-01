@@ -21,7 +21,12 @@ namespace TripAssistantSearchEngineApi
         private readonly ISingleActivityProvider _singleActivityProvider;
         private readonly IHotelApi _hotelApi;
         private readonly IContextCheckerService _contextChecker;
+        private readonly ISearchQueryProvider _searchQueryProvider;
+        private readonly IDistanceCalculator _distanceCalculator;
+
         string typeResponse = "";
+        //JObject selectApi = new JObject();
+        string selectApi = "";
         ActivityBasedSearch activityBasedSearch = new ActivityBasedSearch();
         AttractionBasedSearch attractionBasedSearch = new AttractionBasedSearch();
         CityBasedSearch cityBasedSearch = new CityBasedSearch();
@@ -31,9 +36,12 @@ namespace TripAssistantSearchEngineApi
         string resultantResponse = "";
         string[] response;
         string splitResponse;
+        double dist = 0;
+      
+        string currentgeoCode;
         string geoCode;
         List<Activity> selected = new List<Activity>();
-        public ContextAnalyzerService(ISingleActivityProvider singleActivityProvider,ISingleAttractionProvider singleAttractionProvider,IHotelCache hotelCache,IActivityCache activityCache,IUserPreferenceService userPreferenceService,ICoreResponseGenerator coreResponseGenerator, IActivityApi activityApi,IGeoCode geoCode,IContextCheckerService contextChecker, IHotelApi hotelApi)
+        public ContextAnalyzerService(ISingleActivityProvider singleActivityProvider,ISingleAttractionProvider singleAttractionProvider,IHotelCache hotelCache,IActivityCache activityCache,IUserPreferenceService userPreferenceService,IDistanceCalculator distanceCalculator, ICoreResponseGenerator coreResponseGenerator, IActivityApi activityApi,IGeoCode geoCode,IContextCheckerService contextChecker, IHotelApi hotelApi, ISearchQueryProvider searchQueryProvider)
         {
             _singleActivityProvider = singleActivityProvider;
             _singleAttractionProvider = singleAttractionProvider;
@@ -45,6 +53,8 @@ namespace TripAssistantSearchEngineApi
             _coreResponseGenerator = coreResponseGenerator;
             _contextChecker = contextChecker;
             _geoCode = geoCode;
+            _searchQueryProvider = searchQueryProvider;
+            _distanceCalculator = distanceCalculator;
         }
         public Response GetResultsFromApi(string input, string location)
         {
@@ -54,14 +64,18 @@ namespace TripAssistantSearchEngineApi
             {
                 if (response[0].Equals("yes"))
                 {
+                    currentgeoCode = _geoCode.GetGeoCodeOfCity(location);
+
                     typeResponse = "response";
                     PerformOperationAgainstCorrectInput(location);
                     if (cityBasedSearch != null)
                     {
-                        //activityResponse = _activityCache.GetActivitiesFromCache(cityBasedSearch.City);
+                        activityResponse = _activityCache.GetActivitiesFromCache(cityBasedSearch.City);
                         if (activityResponse == null || activityResponse[0].Type == null || activityResponse[0].ListActivity == null)
                         {
                             geoCode = _geoCode.GetGeoCodeOfCity(cityBasedSearch.City);
+                             dist = _distanceCalculator.distance(geoCode, currentgeoCode,'K');
+                            selectApi=(_searchQueryProvider.GetSearchQuery(cityBasedSearch.Duration, dist)).ToString();
                             activityResponse = _activityApi.GetActivities(geoCode, cityBasedSearch.City);
                             activityResponse = _userPreferenceService.GetFilteredResultsBasedOnUserPreferences(geoCode,activityResponse);
                             _activityCache.InsertActivitiesInCache(activityResponse, cityBasedSearch.City);
@@ -88,6 +102,8 @@ namespace TripAssistantSearchEngineApi
                     else if (attractionBasedSearch != null)
                     {
                         geoCode = _geoCode.GetGeoCodeOfCity(attractionBasedSearch.AttractionName);
+                        dist = _distanceCalculator.distance(geoCode, currentgeoCode, 'K');
+                        selectApi=(_searchQueryProvider.GetSearchQuery(cityBasedSearch.Duration, dist)).ToString();
                         activityResponse = _singleAttractionProvider.GetListWithSingleAttraction(geoCode, attractionBasedSearch.AttractionName);
                         if(attractionBasedSearch.Duration != 1)
                         {
@@ -124,6 +140,9 @@ namespace TripAssistantSearchEngineApi
             finalResults= _coreResponseGenerator.MakeResponse(input,selected,hotels, activityResponse, typeResponse, resultantResponse);
             return finalResults;
         }
+
+
+        
         public void PerformOperationAgainstCorrectInput(string location)
         {
             if (response[response.Length - 1].Equals("current"))
