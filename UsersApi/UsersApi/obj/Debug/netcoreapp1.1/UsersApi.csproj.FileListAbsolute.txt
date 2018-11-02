@@ -1,0 +1,11 @@
+C:\Users\mmehndiratta\source\repos\UsersApi\UsersApi\obj\Debug\netcoreapp1.1\UsersApi.csproj.CoreCompileInputs.cache
+C:\Users\mmehndiratta\source\repos\UsersApi\UsersApi\obj\Debug\netcoreapp1.1\UsersApi.AssemblyInfoInputs.cache
+C:\Users\mmehndiratta\source\repos\UsersApi\UsersApi\obj\Debug\netcoreapp1.1\UsersApi.AssemblyInfo.cs
+C:\Users\mmehndiratta\source\repos\UsersApi\UsersApi\bin\Debug\netcoreapp1.1\UsersApi.deps.json
+C:\Users\mmehndiratta\source\repos\UsersApi\UsersApi\bin\Debug\netcoreapp1.1\UsersApi.runtimeconfig.json
+C:\Users\mmehndiratta\source\repos\UsersApi\UsersApi\bin\Debug\netcoreapp1.1\UsersApi.runtimeconfig.dev.json
+C:\Users\mmehndiratta\source\repos\UsersApi\UsersApi\bin\Debug\netcoreapp1.1\UsersApi.dll
+C:\Users\mmehndiratta\source\repos\UsersApi\UsersApi\bin\Debug\netcoreapp1.1\UsersApi.pdb
+C:\Users\mmehndiratta\source\repos\UsersApi\UsersApi\obj\Debug\netcoreapp1.1\UsersApi.dll
+C:\Users\mmehndiratta\source\repos\UsersApi\UsersApi\obj\Debug\netcoreapp1.1\UsersApi.pdb
+C:\Users\mmehndiratta\source\repos\UsersApi\UsersApi\obj\Debug\netcoreapp1.1\UsersApi.csprojResolveAssemblyReference.cache
